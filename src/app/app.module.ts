@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
+
+
+import { ConfigService } from './services/config.service'
 
 const routes: Routes = [
   { path: '', loadChildren: './Home/home.module#HomeModule' },
@@ -20,9 +23,12 @@ const Routing: ModuleWithProviders = RouterModule.forRoot(routes, { preloadingSt
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     Routing
   ],
-  providers: [],
+  providers: [
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
