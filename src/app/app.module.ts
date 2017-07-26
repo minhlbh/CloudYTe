@@ -43,7 +43,7 @@ import { QuenMatKhauComponent } from './components/quen-mat-khau/quen-mat-khau.c
 import { ForumBarComponent } from './components/forum-bar/forum-bar.component';
 
 import { ThayDoiMatKhauComponent } from './components/thay-doi-mat-khau/thay-doi-mat-khau.component'
-import {HoiChanTrucTuyenComponent} from './components/hoi-chan-truc-tuyen/hoi-chan-truc-tuyen.component';
+import { HoiChanTrucTuyenComponent } from './components/hoi-chan-truc-tuyen/hoi-chan-truc-tuyen.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -59,9 +59,9 @@ const appRoutes: Routes = [
     { path: 'forgotPassword', component: QuenMatKhauComponent },
     { path: 'changePassword/:IdU/:phone', component: ThayDoiMatKhauComponent },
     { path: 'chandoanhinhanh', component: ChanDoanHinhAnhComponent },
-     { path: 'hoichantructuyen', component: HoiChanTrucTuyenComponent },
+    { path: 'hoichantructuyen', component: HoiChanTrucTuyenComponent },
     { path: 'verify/:IdU/:phone/:code', component: VerifyCodeComponent },
-    // 
+    //
     { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -91,7 +91,7 @@ const appRoutes: Routes = [
         SafeUrlPipe,
         LogoutComponent,
         QuenMatKhauComponent,
-        
+
         ThayDoiMatKhauComponent,
         HoiChanTrucTuyenComponent,
         ForumBarComponent
@@ -101,15 +101,15 @@ const appRoutes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        InfiniteScrollModule ,
+        InfiniteScrollModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: true, useHash: true }
+            { enableTracing: false, useHash: true }
         )
     ],
     providers: [
-        //services
+        // services
         NavbarService,
         LeftNavbarService,
         BenhService,

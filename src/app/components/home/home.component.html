@@ -1,8 +1,10 @@
-﻿<div class="start-screen" id="start-screen">
+﻿ <!-- background: url(../images/bgr-6.jpg) center no-repeat fixed; -->
+<div class="start-screen" id="start-screen"[ngStyle]="{'background-image': 'url('+ appSetting?.Background +')'}">
   <header>
     <div class="logo-sc">
-      <img src="assets/images/logo-startscreen.png">
-      <span>Trưởng Khoa</span>
+      <img style="width:80px" [attr.src]="appSetting?.Logo">
+      <!-- src="assets/images/logo-startscreen.png" -->
+      <span>{{appSetting?.ThuongHieu}}</span>
     </div>
 
     <div class="area-controls">

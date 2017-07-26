@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
     localScreen: any;
     auth: any;
     public runAnimation = false;
+    public appSetting: any;
     constructor(
         private router: Router,
         public nav: NavbarService,
@@ -67,7 +68,9 @@ export class HomeComponent implements OnInit {
             this.runAnimation = true;
             this.menuService.setLocalStarScreen(data.home);
             this.localScreen = this.menuService.getLocalStartScreen();
-        })
+            this.appSetting = data.setting;
+            console.log(this.appSetting);
+        });
 
     }
 
@@ -116,7 +119,7 @@ export class HomeComponent implements OnInit {
         return _temp;
     }
 
-    
+
 
 }
 

@@ -45,7 +45,8 @@ module.exports = "<div *ngIf=\"!isHome\">\r\n  <app-navigation></app-navigation>
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__ = __webpack_require__("../../../../../src/app/services/left-nav/left-navbar.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__ = __webpack_require__("../../../../../src/app/services/top-nav/navbar.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_menu_service__ = __webpack_require__("../../../../../src/app/services/menu.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -60,27 +61,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppComponent = (function () {
-    function AppComponent(leftNav, router, nav) {
+    function AppComponent(leftNav, router, nav, menuService) {
+        var _this = this;
         this.leftNav = leftNav;
         this.router = router;
         this.nav = nav;
+        this.menuService = menuService;
         this.isHome = true;
         this.loading = false;
+        this.menuService.getStartScreen().subscribe(function (rs) {
+            _this.menuService.setSetting(rs.setting);
+        });
     }
+    // tslint:disable-next-line:use-life-cycle-interface
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.router.events.subscribe(function (s) {
-            if (s['url'] == '/home' || s['url'] == '/' || s['url'] == '/login'
-                || s['url'] == '/register' || s['url'] == '/verify' || s['url'] == '/forgotPassword'
-                || s['url'] == '/changePassword' || s['url'] == '/danhsachapp') {
+            if (s['url'] === '/home' || s['url'] === '/' || s['url'] === '/login'
+                || s['url'] === '/register' || s['url'] === '/verify' || s['url'] === '/forgotPassword'
+                || s['url'] === '/changePassword' || s['url'] === '/danhsachapp') {
                 _this.isHome = true;
             }
             else {
                 _this.isHome = false;
             }
         });
-        console.log(this.isHome.toString());
     };
     return AppComponent;
 }());
@@ -90,10 +97,10 @@ AppComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_menu_service__["a" /* MenuService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_menu_service__["a" /* MenuService */]) === "function" && _d || Object])
 ], AppComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -206,7 +213,7 @@ var appRoutes = [
     { path: 'chandoanhinhanh', component: __WEBPACK_IMPORTED_MODULE_30__components_chan_doan_hinh_anh_chan_doan_hinh_anh_component__["a" /* ChanDoanHinhAnhComponent */] },
     { path: 'hoichantructuyen', component: __WEBPACK_IMPORTED_MODULE_38__components_hoi_chan_truc_tuyen_hoi_chan_truc_tuyen_component__["a" /* HoiChanTrucTuyenComponent */] },
     { path: 'verify/:IdU/:phone/:code', component: __WEBPACK_IMPORTED_MODULE_27__components_verify_code_verify_code_component__["a" /* VerifyCodeComponent */] },
-    // 
+    //
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_10__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppModule = (function () {
@@ -251,10 +258,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_5_angular2_infinite_scroll__["InfiniteScrollModule"],
             __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { enableTracing: true, useHash: true })
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true })
         ],
         providers: [
-            //services
+            // services
             __WEBPACK_IMPORTED_MODULE_17__services_top_nav_navbar_service__["a" /* NavbarService */],
             __WEBPACK_IMPORTED_MODULE_18__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */],
             __WEBPACK_IMPORTED_MODULE_21__services_benh_service__["a" /* BenhService */],
@@ -617,7 +624,7 @@ HoiChanTrucTuyenComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/hoi-chan-truc-tuyen/hoi-chan-truc-tuyen.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/hoi-chan-truc-tuyen/hoi-chan-truc-tuyen.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* DomSanitizer */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */]) === "function" && _a || Object])
 ], HoiChanTrucTuyenComponent);
 
 var _a;
@@ -646,7 +653,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"start-screen\" id=\"start-screen\">\r\n  <header>\r\n    <div class=\"logo-sc\">\r\n      <img src=\"assets/images/logo-startscreen.png\">\r\n      <span>Trưởng Khoa</span>\r\n    </div>\r\n\r\n    <div class=\"area-controls\">\r\n      <div class=\"user\">\r\n        <span *ngIf=\"this.auth\" class=\"name-user\">{{this.auth.HoVaTen}}</span>\r\n        <span *ngIf=\"this.auth\" class=\"avt fa fa-fw fa-user\" style=\"cursor: pointer;\"></span>\r\n        <a *ngIf=\"!this.auth\" routerLink='/login' class=\"name-user bt-sign-up\">\r\n          <span class=\"fa fa-fw fa-sign-in icon\" aria-hidden=\"true\"></span>\r\n          Đăng nhập\r\n        </a>\r\n        <a *ngIf=\"!this.auth\" routerLink='/register' class=\"sign-up-now bt-sign-up\">\r\n          <span class=\"fa fa-fw fa-user-plus icon\" aria-hidden=\"true\"></span>\r\n          Đăng ký ngay\r\n        </a>\r\n      </div>\r\n      <button (click)=\"logOut()\" *ngIf=\"this.auth\" class=\"settings fa fa-fw fa-power-off\" style=\"cursor: pointer;\"></button>\r\n    </div>\r\n    <div class=\"search-top\">\r\n      <div class=\"input-control text full-size\" data-role=\"input\">\r\n        <span class=\"glyphicon glyphicon-search icon-search\" aria-hidden=\"true\"></span>\r\n        <input type=\"text\" placeholder=\"Tìm kiếm dịch vụ...\" [formControl]=\"searchKey\" (keyup)=\"doSearch($event)\">\r\n      </div>\r\n    </div>\r\n  </header>\r\n  <content>\r\n    <!-- start tile group -->\r\n    <div [@pageAnimation]=\"runAnimation\" class=\"tile-group\" *ngFor=\"let menu of homeScreenMenu; let i = index\">\r\n      <h3 class=\"title-group\">{{menu?.Ten}}</h3>\r\n      <span class=\"count-apps\">({{menu?.items.length}} app)</span>\r\n      <div class=\"tile-container\">\r\n        <div class=\"item\" *ngFor=\"let item of menu?.items\">\r\n\r\n          <!--1 ảnh icon ảnh start-->\r\n          <div *ngIf=\"item?.style=='1 ảnh Icon ảnh'\">\r\n            <!--chiều rộng =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n\r\n            <!--chiều rộng =2, chiều cao =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n            <!--chiều rộng =1-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 1 && item?.chieuCao == 1\" class=\"tile bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n          </div>\r\n          <!--1 ảnh icon ảnh end-->\r\n\r\n          <!--1 ảnh icon text start-->\r\n          <div *ngIf=\"item?.style=='1 ảnh Icon text'\">\r\n            <!--chiều rộng = 2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide\" [style.background-color]=\"item?.mauNen\">\r\n              <div class=\"tile-content iconic\">\r\n                <a routerLink={{item.url}}><span class=\"fa fa-fw {{item.IconText}} icon\"></span></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n            <!--chiều rộng = 2, chieuf cao =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-wide doubleH\" [style.background-color]=\"item?.mauNen\"\r\n              [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n            <!--chiều rộng = 1-->\r\n            <div *ngIf=\"item?.chieuRong == 1\" class=\"tile bg-darkBlue fg-white\" [style.background-color]=\"item?.mauNen\">\r\n              <div class=\"tile-content iconic\">\r\n\r\n                <a routerLink={{item.url}}><span class=\"fa fa-fw {{item.IconText}} icon\"></span></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n          </div>\r\n          <!--1 text icon text end-->\r\n\r\n          <!--2 ảnh icon ảnh start-->\r\n          <div *ngIf=\"item?.style=='2 ảnh Icon ảnh'\">\r\n            <!--chiều rộng =2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n\r\n            <!--chiều rộng =2, chiều cao =2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-large fg-white\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n            <!--chiều rộng =1-->\r\n            <div *ngIf=\"item?.chieuRong == 1 && item?.chieuCao == 1\" class=\"tile fg-white\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n          </div>\r\n          <!--2 ảnh icon ảnh end-->\r\n\r\n        </div>\r\n\r\n      </div>\r\n      <a (click)=\"showAll(i)\" class=\"view-all\" style=\"cursor: pointer;\">\r\n\r\n           <span>Xem tất cả</span>\r\n           <i class=\"fa fa-fw fa-arrow-circle-o-right\"></i>\r\n        </a>\r\n    </div>\r\n"
+module.exports = " <!-- background: url(../images/bgr-6.jpg) center no-repeat fixed; -->\r\n<div class=\"start-screen\" id=\"start-screen\"[ngStyle]=\"{'background-image': 'url('+ appSetting?.Background +')'}\">\r\n  <header>\r\n    <div class=\"logo-sc\">\r\n      <img style=\"width:80px\" [attr.src]=\"appSetting?.Logo\">\r\n      <!-- src=\"assets/images/logo-startscreen.png\" -->\r\n      <span>{{appSetting?.ThuongHieu}}</span>\r\n    </div>\r\n\r\n    <div class=\"area-controls\">\r\n      <div class=\"user\">\r\n        <span *ngIf=\"this.auth\" class=\"name-user\">{{this.auth.HoVaTen}}</span>\r\n        <span *ngIf=\"this.auth\" class=\"avt fa fa-fw fa-user\" style=\"cursor: pointer;\"></span>\r\n        <a *ngIf=\"!this.auth\" routerLink='/login' class=\"name-user bt-sign-up\">\r\n          <span class=\"fa fa-fw fa-sign-in icon\" aria-hidden=\"true\"></span>\r\n          Đăng nhập\r\n        </a>\r\n        <a *ngIf=\"!this.auth\" routerLink='/register' class=\"sign-up-now bt-sign-up\">\r\n          <span class=\"fa fa-fw fa-user-plus icon\" aria-hidden=\"true\"></span>\r\n          Đăng ký ngay\r\n        </a>\r\n      </div>\r\n      <button (click)=\"logOut()\" *ngIf=\"this.auth\" class=\"settings fa fa-fw fa-power-off\" style=\"cursor: pointer;\"></button>\r\n    </div>\r\n    <div class=\"search-top\">\r\n      <div class=\"input-control text full-size\" data-role=\"input\">\r\n        <span class=\"glyphicon glyphicon-search icon-search\" aria-hidden=\"true\"></span>\r\n        <input type=\"text\" placeholder=\"Tìm kiếm dịch vụ...\" [formControl]=\"searchKey\" (keyup)=\"doSearch($event)\">\r\n      </div>\r\n    </div>\r\n  </header>\r\n  <content>\r\n    <!-- start tile group -->\r\n    <div [@pageAnimation]=\"runAnimation\" class=\"tile-group\" *ngFor=\"let menu of homeScreenMenu; let i = index\">\r\n      <h3 class=\"title-group\">{{menu?.Ten}}</h3>\r\n      <span class=\"count-apps\">({{menu?.items.length}} app)</span>\r\n      <div class=\"tile-container\">\r\n        <div class=\"item\" *ngFor=\"let item of menu?.items\">\r\n\r\n          <!--1 ảnh icon ảnh start-->\r\n          <div *ngIf=\"item?.style=='1 ảnh Icon ảnh'\">\r\n            <!--chiều rộng =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n\r\n            <!--chiều rộng =2, chiều cao =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n            <!--chiều rộng =1-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 1 && item?.chieuCao == 1\" class=\"tile bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n          </div>\r\n          <!--1 ảnh icon ảnh end-->\r\n\r\n          <!--1 ảnh icon text start-->\r\n          <div *ngIf=\"item?.style=='1 ảnh Icon text'\">\r\n            <!--chiều rộng = 2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide\" [style.background-color]=\"item?.mauNen\">\r\n              <div class=\"tile-content iconic\">\r\n                <a routerLink={{item.url}}><span class=\"fa fa-fw {{item.IconText}} icon\"></span></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n            <!--chiều rộng = 2, chieuf cao =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-wide doubleH\" [style.background-color]=\"item?.mauNen\"\r\n              [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n            <!--chiều rộng = 1-->\r\n            <div *ngIf=\"item?.chieuRong == 1\" class=\"tile bg-darkBlue fg-white\" [style.background-color]=\"item?.mauNen\">\r\n              <div class=\"tile-content iconic\">\r\n\r\n                <a routerLink={{item.url}}><span class=\"fa fa-fw {{item.IconText}} icon\"></span></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n          </div>\r\n          <!--1 text icon text end-->\r\n\r\n          <!--2 ảnh icon ảnh start-->\r\n          <div *ngIf=\"item?.style=='2 ảnh Icon ảnh'\">\r\n            <!--chiều rộng =2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n\r\n            <!--chiều rộng =2, chiều cao =2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-large fg-white\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n            <!--chiều rộng =1-->\r\n            <div *ngIf=\"item?.chieuRong == 1 && item?.chieuCao == 1\" class=\"tile fg-white\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n          </div>\r\n          <!--2 ảnh icon ảnh end-->\r\n\r\n        </div>\r\n\r\n      </div>\r\n      <a (click)=\"showAll(i)\" class=\"view-all\" style=\"cursor: pointer;\">\r\n\r\n           <span>Xem tất cả</span>\r\n           <i class=\"fa fa-fw fa-arrow-circle-o-right\"></i>\r\n        </a>\r\n    </div>\r\n"
 
 /***/ }),
 
@@ -707,6 +714,8 @@ var HomeComponent = (function () {
             _this.runAnimation = true;
             _this.menuService.setLocalStarScreen(data.home);
             _this.localScreen = _this.menuService.getLocalStartScreen();
+            _this.appSetting = data.setting;
+            console.log(_this.appSetting);
         });
     };
     HomeComponent.prototype.logOut = function () {
@@ -1199,7 +1208,7 @@ LoadDuLieuYoutubeComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/load-du-lieu-youtube/load-du-lieu-youtube.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/load-du-lieu-youtube/load-du-lieu-youtube.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* DomSanitizer */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */]) === "function" && _a || Object])
 ], LoadDuLieuYoutubeComponent);
 
 var _a;
@@ -2185,7 +2194,7 @@ SafeUrlPipe = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
         name: 'safeUrl'
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["d" /* DomSanitizer */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */]) === "function" && _a || Object])
 ], SafeUrlPipe);
 
 var _a;
@@ -2362,6 +2371,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2372,6 +2382,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
 
 
 
@@ -2379,30 +2393,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MenuService = (function () {
-    function MenuService(http) {
+    function MenuService(http, document) {
         this.http = http;
+        this.document = document;
         this.home = [];
-        this.menu = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].apiUrl + "/menu";
+        this.menu = '';
     }
     MenuService.prototype.getStartScreen = function () {
+        this.menu = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].apiUrl + "menu?tenmien=" + document.location.hostname;
         // ...using get request
         return this.http.get(this.menu)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["Observable"].throw(error.json().error || 'Server error'); });
     };
     MenuService.prototype.getLocalStartScreen = function () {
-        this.home = JSON.parse(localStorage.getItem("home_menu"));
+        this.home = JSON.parse(localStorage.getItem('home_menu'));
         return this.home;
     };
     MenuService.prototype.setLocalStarScreen = function (data) {
-        localStorage.setItem("home_menu", JSON.stringify(data));
+        localStorage.setItem('home_menu', JSON.stringify(data));
         this.home = data;
+    };
+    MenuService.prototype.setSetting = function (data) {
+        localStorage.setItem('site_setting', JSON.stringify(data));
+    };
+    MenuService.prototype.getSetting = function (data) {
+        return JSON.parse(localStorage.getItem('site_setting'));
     };
     return MenuService;
 }());
 MenuService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["c" /* DOCUMENT */])),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, Object])
 ], MenuService);
 
 var _a;
