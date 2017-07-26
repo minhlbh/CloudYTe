@@ -1656,7 +1656,7 @@ background-color: #ccc;
 
 
 .start-screen .tile-group .tile-container .tile:hover, .start-screen .tile-group .tile-container .tile-wide:hover, .start-screen .tile-group .tile-container .tile-big:hover {
-  outline: #fff solid 3px;
+  outline: rgba(255,255,255,.7) solid 3px;
 }
 .start-screen .tile-group .tile-container .tile:active, .start-screen .tile-group .tile-container .tile-wide:active, .start-screen .tile-group .tile-container .tile-big:active {
   outline: 0;
