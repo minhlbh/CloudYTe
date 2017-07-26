@@ -2571,7 +2571,7 @@ var _a;
 // The file contents for the current environment will overwrite these during build.
 var environment = {
     production: false,
-    apiUrl: 'http://truongkhoa.com/api/'
+    apiUrl: 'http://api.truongkhoa.com/api/'
 };
 //# sourceMappingURL=environment.js.map
 
