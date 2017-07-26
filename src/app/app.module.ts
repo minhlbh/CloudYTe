@@ -105,7 +105,7 @@ const appRoutes: Routes = [
         BrowserAnimationsModule,
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: true }
+            { enableTracing: true, useHash: true }
         )
     ],
     providers: [

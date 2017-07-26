@@ -251,7 +251,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_5_angular2_infinite_scroll__["InfiniteScrollModule"],
             __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { enableTracing: true })
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { enableTracing: true, useHash: true })
         ],
         providers: [
             //services
