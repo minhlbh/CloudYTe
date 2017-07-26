@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://truongkhoa.com/api/'
+  apiUrl: 'http://api.truongkhoa.com/api/'
 };
