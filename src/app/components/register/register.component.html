@@ -1,0 +1,78 @@
+﻿<!-- start dialog sign-up & sign-in -->
+<div id="sign-up" class="dialog-acc-wr">
+  <button class="bt-close"><span  [routerLink] = "['/home']" class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+  <div class="line"></div>
+  <div class="dialog-sign-up">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation"><a routerLink="/login" aria-controls="home" role="tab" data-toggle="tab">Đăng nhập</a></li>
+      <li role="presentation" class="active"><a routerLink="/register" aria-controls="profile" role="tab" data-toggle="tab">Đăng ký</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- đăng ký -->
+      <div role="tabpanel" class="tab-pane" id="profile" style="display: block;">
+
+        <!-- Đăng kis social network -->
+        <div class="social">
+          <a href="#" class="fb">
+                            <i class="fa fa-fw fa-facebook"></i>
+                          </a>
+          <a href="#" class="gg">
+                            <i class="fa fa-fw fa-google-plus"></i>
+                          </a>
+          <a href="#" class="lk">  
+                            <i class="fa fa-fw fa-linkedin"></i>
+                          </a>
+        </div>
+
+        <!-- separator -->
+        <div class="separator">
+          <span class="text">Hoặc</span>
+        </div>
+
+        <!-- form đăng ký -->
+        <form #f="ngForm" (ngSubmit)="registerSubmit()">
+            <!-- Họ và tên -->
+          <div class="input-wr">
+            <input id="input-up3" type="text" name="username" [formControl]="name" placeholder="Họ và tên">
+            
+          </div>
+            <!-- Email -->
+          <div class="input-wr ">
+            <input id="input-up4" type="text" name="Email" [formControl]="email" placeholder="Email">
+            
+           <!-- <span class="glyphicon glyphicon-exclamation-sign icon-error" data-toggle="tooltip" title="Email không hợp lệ. Vui lòng nhập lại."></span> -->
+          </div>
+            <!-- Số điện thoại -->
+          <div class="input-wr">
+            <input id="input-up5" type="text" name="Số điện thoại" [formControl]="phone" placeholder="Số điện thoại">
+            
+          </div>
+            <!-- Password -->
+          <div class="input-wr">
+            <input  id="input-up5" type="password" name="password" [formControl]="password" placeholder="Mật khẩu" >
+            
+          </div>
+        </form>
+
+        <!-- Hiện lỗi nếu có -->
+        <blockquote *ngIf="error!= null">
+          <small style="color:red">{{error}}</small>
+        </blockquote>
+        <br />
+
+        <!-- checkbox -->
+        <div class="checkbox sign-up">
+          <label>
+                <input type="checkbox" value="" checked>
+                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                 Tôi đồng ý với <a href="#"> điều khoản sử dụng</a> và <a href="#"> chính sách bảo mật</a>.
+          </label>
+
+        <!-- Đăng ký button -->
+          <a (click)= "registerSubmit()" id="bt-sign-up" class="bt-sign-in" style="cursor: pointer;">Đăng ký</a>
+        </div>
+      </div>
+    </div>
+  </div>

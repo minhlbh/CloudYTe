@@ -1,0 +1,8 @@
+.video-frame{
+    height: 100%;
+    overflow: hidden;
+}
+.head{
+    background-color: #0f9cb3;
+    height: 44px;
+}

@@ -1,0 +1,37 @@
+<!-- start content wrapper -->
+<div class="main">
+  <!-- Start col left 2 -->
+  <div class="col-left-content">
+    <div class="title-col">
+      <div style="display:flex; flex-direction: row;">
+        <div>
+          <span class="fa fa-fw {{iconText}} icon" style="padding-top:15px; padding-right:10px;"></span>
+        </div>
+        <div>
+          <h3 class="big-title">Chẩn đoán hình ảnh</h3>
+
+        </div>
+      </div>
+    </div>
+    <div class="search-box-top" style="padding-top:30px">
+      <div class="input-control text full-size" data-role="input">
+        <span class="fa fa-fw fa-search icon icon-search" aria-hidden="true"></span>
+        <input type="text" placeholder="Nhập tên phòng..." [(ngModel)]="tenphong" style="width:200px">
+        <button *ngIf="!showVideo" (click)="startCallVideo()" class="btn btn-primary" style="height:28px !important; line-height:14px; margin-top:-3px; border-radius:none!important">OK</button>
+        <button *ngIf="showVideo" (click)="endCallVideo()" class="btn btn-danger" style="height:28px !important; line-height:14px; margin-top:-3px; border-radius:none!important">End</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="video-frame" *ngIf="showVideo">
+    <iframe style="min-width:800px;width:70vw; height:100%; border:none; overflow:hidden" [src]='sanitizer.bypassSecurityTrustResourceUrl(urlFrame)'
+      scrolling="no"></iframe>
+  </div>
+  <!-- end content wrapper -->
+</div>
+<!-- <div class="video-frame">
+    <iframe style="min-width:800px;width:70vw; height:100%; border:none; overflow:hidden" src="https://meet.jit.si/TruongKhoa"
+      scrolling="no"></iframe>
+  </div> -->

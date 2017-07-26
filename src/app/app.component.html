@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+﻿<div *ngIf="!isHome">
+  <app-navigation></app-navigation>
+  <left-app-navigation></left-app-navigation>
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="isHome">
+  <router-outlet></router-outlet>
+</div>
+<!--<nav *ngIf="nav.visible">
+  <app-navigation></app-navigation>
+  <nav *ngIf="leftNav.visible">
+    
+          <left-app-navigation></left-app-navigation>
+       
+  </nav>
+</nav>
+<router-outlet></router-outlet>-->
+
+<!--<nav *ngIf="!nav.visible">
+  <nav *ngIf="!nav.visible">
+  <router-outlet></router-outlet>
+  </nav>
+  </nav>-->

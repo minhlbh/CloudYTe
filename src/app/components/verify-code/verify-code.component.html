@@ -1,0 +1,23 @@
+﻿
+
+<!-- start dialog comfirm code -->
+<div id="confirm" class="dialog-acc-wr">
+  <button class="bt-close"><span  [routerLink] = "['/home']"  class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+  <div class="dialog-forgot-pass">
+    <h4>Xác thực tài khoản</h4>
+    <p>Một tin nhắn chứa mã xác thực đã được gửi đến số điện thoại của bạn. Vui lòng kiểm tra và nhập mã xác thực.</p>
+    <form #f="ngForm">
+    <div class="input-wr">
+      <input type="text" [formControl]="verifyCode" name="username" placeholder="Nhập mã xác thực">
+    </div>
+    </form>
+    <blockquote *ngIf="error!= null">
+      <small style="color:red">{{error}}</small>
+    </blockquote>
+    <br />
+    <a (click)="verification()" class="bt-forgot-pass">Hoàn tất</a>
+    <a href="#" class="text-link text-green">Gửi lại mã xác thực</a>
+    <a [routerLink] = "['/register']" class="bt-close-forgot-pass">Thoát</a>
+  </div>
+</div>
+<!-- end dialog comfirm code -->

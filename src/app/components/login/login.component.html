@@ -1,0 +1,61 @@
+﻿<!-- start dialog sign-up & sign-in -->
+<div id="sign-up" class="dialog-acc-wr" >
+    <button class="bt-close" ><span [routerLink] = "['/home']" class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    <div class="line"></div>
+    <div class="dialog-sign-up">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a routerLink="/login" aria-controls="home" role="tab" data-toggle="tab">Đăng nhập</a></li>
+            <li role="presentation"><a routerLink="/register" aria-controls="profile" role="tab" data-toggle="tab">Đăng ký</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- đăng nhập -->
+            <div role="tabpanel" class="tab-pane active" id="home">
+
+                <div class="social">
+                    <a href="#" class="fb">
+                            <i class="fa fa-fw fa-facebook"></i>
+                          </a>
+                    <a href="#" class="gg">
+                            <i class="fa fa-fw fa-google-plus"></i>
+                          </a>
+                    <a href="#" class="lk">  
+                            <i class="fa fa-fw fa-linkedin"></i>
+                          </a>
+                </div>
+
+                <div class="separator">
+                    <span class="text">Hoặc</span>
+                </div>
+                <!-- form đăng nhập -->
+                <form #f="ngForm" (ngSubmit)="onLoginSubmit()">
+                    <div class="input-wr">
+                        <input type="text" [formControl]="username" name="username" placeholder="Email hoặc tên đăng nhập">
+                        
+                    </div>
+                    <a routerLink="/forgotPassword" class="forgot-pass">Quên mật khẩu?</a>
+                    <div class="input-wr">
+                        <input type="password" [formControl]="password" name="password" placeholder="Mật khẩu">
+                        
+                    </div>
+                </form>
+                <!-- hiện lỗi -->
+                <blockquote *ngIf="error!= null">
+                    <small style="color:red">{{error}}</small>
+                </blockquote>
+                <br />
+
+                <div class="checkbox">
+                    <label>
+                              <input type="checkbox" value="" checked>
+                              <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                              Lưu tài khoản
+                            </label>
+                    <a (click)="onLoginSubmit()" class="bt-sign-in" style="cursor: pointer">Đăng nhập</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>

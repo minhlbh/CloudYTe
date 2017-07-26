@@ -1,0 +1,20 @@
+<div id="forgot-pass-wr" class="dialog-acc-wr">
+  <button class="bt-close"><span  [routerLink] = "['/home']"  class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+  <div class="dialog-forgot-pass">
+    <h4>Quên mật khẩu?</h4>
+    <form #f="ngForm">
+      <div class="input-wr">
+        <input type="text" name="phone" [formControl]="phone" placeholder="Nhập số điện thoại">
+      </div>
+    </form>
+
+    <!-- hiện lỗi -->
+    <blockquote *ngIf="error!= null">
+      <small style="color:red">{{error}}</small>
+    </blockquote>
+    <br />
+    
+    <a (click)="forgotPass()" class="bt-forgot-pass" style="cursor: pointer">Gửi mã xác thực</a>
+    <a [routerLink]="['/login'] " class="bt-close-forgot-pass" style="cursor: pointer">Thoát</a>
+  </div>
+</div>
