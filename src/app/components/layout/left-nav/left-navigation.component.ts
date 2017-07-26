@@ -12,7 +12,7 @@ export class LeftNavigationComponent implements OnInit {
   private elements: element[];
   private iconText: string;
   constructor(
-    private leftNav: LeftNavbarService,
+    public leftNav: LeftNavbarService,
     private router: Router
   ) { }
 
