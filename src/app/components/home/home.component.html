@@ -15,7 +15,7 @@
           <span class="fa fa-fw fa-sign-in icon" aria-hidden="true"></span>
           Đăng nhập
         </a>
-        <a *ngIf="!this.auth" routerLink='/register' class="sign-up-now bt-sign-up">
+        <a *ngIf="!this.auth" routerLink='/register' class="sign-up-now bt-sign-up" [style.background]="appSetting?.MauDam">
           <span class="fa fa-fw fa-user-plus icon" aria-hidden="true"></span>
           Đăng ký ngay
         </a>
@@ -128,7 +128,7 @@
         </div>
 
       </div>
-      <a (click)="showAll(i)" class="view-all" style="cursor: pointer;">
+      <a (click)="showAll(i)" class="view-all" style="cursor: pointer;" [style.color]="appSetting.MauDam">
 
            <span>Xem tất cả</span>
            <i class="fa fa-fw fa-arrow-circle-o-right"></i>
