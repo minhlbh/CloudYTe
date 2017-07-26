@@ -292,7 +292,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/chan-doan-hinh-anh/chan-doan-hinh-anh.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main\">\n<iframe style=\"min-width:800px;width:70vw; height:100%; border:none; overflow:hidden\" src=\"http://truongkhoa.com/Dicom\" scrolling=\"no\" ></iframe>\n</div>"
+module.exports = "<div class=\"main\">\n<iframe style=\"min-width:800px;width:70vw; height:100%; border:none; overflow:hidden\" src=\"http://api.truongkhoa.com/Dicom\" scrolling=\"no\" ></iframe>\n</div>\n"
 
 /***/ }),
 
