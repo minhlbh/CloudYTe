@@ -805,7 +805,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/layout/left-nav/left-navigation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Start col left fixed -->\r\n<div class=\"col-left-fixed\" *ngIf=\"leftNav.visible\">\r\n\r\n  <ul>\r\n    <li (click)=\"changeMNView()\">\r\n      <a id=\"menu-toggle\" >\r\n            <span class=\"glyphicon glyphicon-align-justify\" aria-hidden=\"true\"></span>\r\n          </a>\r\n    </li>\r\n  </ul>\r\n\r\n  <ul *ngFor=\"let element of elements\">\r\n    <li >\r\n      <a href=\"{{element?.url}}\" style=\"cursor: pointer\">\r\n          <span class=\"fa fa-fw {{element.IconText}} icon\" aria-hidden=\"true\"></span>\r\n          <span class=\"title\" *ngIf=\"fullwidth\">{{element.Ten}}\r\n          </span>\r\n        </a>\r\n    </li>\r\n  </ul>\r\n\r\n</div>\r\n<!-- End col left fixed -->\r\n"
+module.exports = "<!-- Start col left fixed -->\r\n<div class=\"col-left-fixed\" *ngIf=\"leftNav.visible\" [style.background]=\"styleConfig?.MauNhat\">\r\n\r\n  <ul>\r\n    <li (click)=\"changeMNView()\">\r\n      <a id=\"menu-toggle\" >\r\n            <span class=\"glyphicon glyphicon-align-justify\" aria-hidden=\"true\"></span>\r\n          </a>\r\n    </li>\r\n  </ul>\r\n\r\n  <ul *ngFor=\"let element of elements\">\r\n    <li >\r\n      <a href=\"{{element?.url}}\" style=\"cursor: pointer\">\r\n          <span class=\"fa fa-fw {{element.IconText}} icon\" aria-hidden=\"true\"></span>\r\n          <span class=\"title\" *ngIf=\"fullwidth\">{{element.Ten}}\r\n          </span>\r\n        </a>\r\n    </li>\r\n  </ul>\r\n\r\n</div>\r\n<!-- End col left fixed -->\r\n"
 
 /***/ }),
 
@@ -818,6 +818,7 @@ module.exports = "<!-- Start col left fixed -->\r\n<div class=\"col-left-fixed\"
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__("../../../../jquery/dist/jquery.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_menu_service__ = __webpack_require__("../../../../../src/app/services/menu.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeftNavigationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -832,11 +833,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LeftNavigationComponent = (function () {
-    function LeftNavigationComponent(leftNav, router) {
+    function LeftNavigationComponent(leftNav, router, menuService) {
         this.leftNav = leftNav;
         this.router = router;
+        this.menuService = menuService;
         this.fullwidth = true;
+        this.styleConfig = this.menuService.getSetting();
     }
     LeftNavigationComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -851,7 +855,6 @@ var LeftNavigationComponent = (function () {
     };
     LeftNavigationComponent.prototype.changeMNView = function () {
         this.fullwidth = !this.fullwidth;
-        console.log("run");
         __WEBPACK_IMPORTED_MODULE_3_jquery__(".col-left-fixed").toggleClass("toggled");
         __WEBPACK_IMPORTED_MODULE_3_jquery__(".main").toggleClass("toggled");
     };
@@ -863,10 +866,10 @@ LeftNavigationComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/layout/left-nav/left-navigation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/layout/left-nav/left-navigation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_menu_service__["a" /* MenuService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_menu_service__["a" /* MenuService */]) === "function" && _c || Object])
 ], LeftNavigationComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=left-navigation.component.js.map
 
 /***/ }),
@@ -892,7 +895,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/layout/navigation/navigation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!-- Start fixed navbar top -->\r\n<nav *ngIf=\"nav.visible\" class=\"navbar navbar-default navbar-fixed-top nav-top\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand logo\" [routerLink]=\"['/home']\">\r\n              <img src=\"assets/images/logo-truongkhoa.png\">\r\n            </a>\r\n    <span class=\"app-bar-divider\">\r\n            </span>\r\n  </div>\r\n  <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n    <ul class=\"nav navbar-nav navbar-left\">\r\n      <li>\r\n        <a href=\"#\">\r\n                  Giới thiệu\r\n                </a>\r\n      </li>\r\n      <li>\r\n        <a href=\"#\">\r\n                  Liên hệ\r\n                </a>\r\n      </li>\r\n    </ul>\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n      <li>\r\n        <a routerLink=\"/login\">Đăng nhập\r\n                </a>\r\n      </li>\r\n      <li>\r\n        <a class=\"bt-sign-up\" routerLink=\"/register\">\r\n                  <span>Đăng ký ngay\r\n                  </span>\r\n                </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n<!-- End fixer navbar -->"
+module.exports = "<!-- Start fixed navbar top -->\r\n<nav *ngIf=\"nav.visible\" class=\"navbar navbar-default navbar-fixed-top nav-top\" [style.background]=\"styleConfig?.MauDam\">\r\n    <div class=\"navbar-header\">\r\n        <a class=\"navbar-brand logo\" [routerLink]=\"['/home']\">\r\n              <img src=\"assets/images/logo-truongkhoa.png\">\r\n            </a>\r\n        <span class=\"app-bar-divider\">\r\n            </span>\r\n    </div>\r\n    <div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n        <ul class=\"nav navbar-nav navbar-left\">\r\n            <li>\r\n                <a href=\"#\">\r\n                  Giới thiệu\r\n                </a>\r\n            </li>\r\n            <li>\r\n                <a href=\"#\">\r\n                  Liên hệ\r\n                </a>\r\n            </li>\r\n        </ul>\r\n        <ul class=\"nav navbar-nav navbar-right\">\r\n            <li>\r\n                <a routerLink=\"/login\">Đăng nhập\r\n                </a>\r\n            </li>\r\n            <li>\r\n                <a class=\"bt-sign-up\" routerLink=\"/register\">\r\n                  <span>Đăng ký ngay\r\n                  </span>\r\n                </a>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</nav>\r\n<!-- End fixer navbar -->\r\n"
 
 /***/ }),
 
@@ -903,6 +906,7 @@ module.exports = "\r\n<!-- Start fixed navbar top -->\r\n<nav *ngIf=\"nav.visibl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__ = __webpack_require__("../../../../../src/app/services/top-nav/navbar.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_menu_service__ = __webpack_require__("../../../../../src/app/services/menu.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -916,10 +920,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NavigationComponent = (function () {
-    function NavigationComponent(nav, location) {
+    function NavigationComponent(nav, menuService, location) {
         this.nav = nav;
+        this.menuService = menuService;
         this.location = location;
+        this.styleConfig = [];
+        this.styleConfig = this.menuService.getSetting();
     }
     NavigationComponent.prototype.ngOnInit = function () {
         this.nav.show();
@@ -935,10 +943,10 @@ NavigationComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/layout/navigation/navigation.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/layout/navigation/navigation.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_top_nav_navbar_service__["a" /* NavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_menu_service__["a" /* MenuService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_menu_service__["a" /* MenuService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common__["g" /* Location */]) === "function" && _c || Object])
 ], NavigationComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=navigation.component.js.map
 
 /***/ }),
@@ -1874,7 +1882,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/tra-cuu-benh/tra-cuu-benh.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- start content wrapper -->\r\n<div class=\"main\">\r\n  <!-- Start col left 2 -->\r\n  <div class=\"col-left-content\">\r\n    <div class=\"title-col\">\r\n      <div style=\"display:flex; flex-direction: row;\">\r\n        <div>\r\n          <span class=\"fa fa-fw {{iconText}} icon\" style=\"padding-top:15px; padding-right:10px;\"></span>\r\n        </div>\r\n        <div>\r\n          <h3 class=\"big-title\" style=\"cursor: default\">Bệnh A-Z</h3>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"search-box-top\">\r\n      <div class=\"input-control text full-size\" data-role=\"input\">\r\n        <span class=\"fa fa-fw fa-search icon icon-search\" aria-hidden=\"true\"></span>\r\n        <input type=\"text\" placeholder=\"Nhập tên bệnh...\" [formControl]=\"searchKey\">\r\n      </div>\r\n      <div style=\"padding: 5px 0 0 0;\">\r\n        <span style=\"font-size: 11px; color: #888; float: right;\">\r\n          {{startBenh}}-{{endBenh}}/{{TongSoLuong}} bệnh\r\n        </span>\r\n      </div>\r\n      <hr class=\"thin bg-grayLighter\">\r\n    </div>\r\n    <div class=\"text-center\">\r\n      <p class=\"lead\" *ngIf=\"loading\">\r\n        <img src=\"assets/66.gif\">\r\n      </p>\r\n    </div>\r\n    <ul class=\"scrollbar-custom\" infinite-scroll [infiniteScrollDistance]=\"2\" [infiniteScrollThrottle]=\"500\" (scrolled)=\"onScroll()\"\r\n      [scrollWindow]=\"false\">\r\n\r\n      <!--<li *ngFor=\"let benh of DsBenh\">\r\n          <a href=\"#\">\r\n                  <span class=\"title\">{{benh.Name}}</span>\r\n              </a>\r\n      </li>-->\r\n\r\n      <li *ngIf=\"!loading\">\r\n        <div class=\"text-center\" *ngIf=\"empty\">\r\n          <p>\r\n            <a> Không kết quả nào phù hợp</a>\r\n          </p>\r\n        </div>\r\n        <div *ngIf=\"!empty\">\r\n          <a style=\"cursor: pointer;\" *ngFor=\"let benh of DsBenh\">\r\n\r\n            <span class=\"title\" (click)=\"clickBenh(benh.Id)\">{{benh.Name}}</span>\r\n          </a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <!-- end col left 2 -->\r\n  <!-- Start content -->\r\n  <div *ngIf=\"showChiTiet\" class=\"content-box\">\r\n    <div class=\"title-col\">\r\n      <h3 class=\"big-title\" style=\"cursor: default\">{{ChiTietBenh?.TenBenh}}</h3>\r\n      <button class=\"bt-close\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\r\n    </div>\r\n    <!-- Start content left -->\r\n    <div class=\"content-left\">\r\n\r\n      <div class=\"content-header\">\r\n        <div class=\"bt-bar\">\r\n          <a href=\"#\" class=\"bt-features\"><span class=\"fa fa-fw fa-calendar-check-o glyphicon\"></span>Đặt lịch khám</a>\r\n          <a href=\"#\" class=\"bt-features\"><span class=\"fa fa-fw fa-user-md glyphicon\"></span>Phương pháp điều trị</a>\r\n        </div>\r\n        <!--<h1 class=\"text-light title-top\">Sốt Dengue</h1>\r\n      <button class=\"button alert bt-booking\"><span class=\"glyphicon glyphicon-calendar\"></span> Đặt lịch khám</button>-->\r\n        <hr class=\"thin bg-grayLighter\">\r\n      </div>\r\n      <!-- load mô tả chi tiết bệnh -->\r\n      <div class=\"content-box-main scrollbar-custom\">\r\n        <dl class=\"dl-horizontal\">\r\n          <dt>\r\n            Chuyên khoa\r\n          </dt>\r\n          <dd>\r\n            {{ChiTietBenh?.DsChuyenKhoa[0]?.TenChuyenKhoa}}\r\n          </dd>\r\n          <dt>\r\n            Tóm tắt\r\n          </dt>\r\n          <dd [innerHTML]=\"ChiTietBenh?.TomTat\"></dd>\r\n        </dl>\r\n        <button type=\"button\" class=\"btn btn-default btn-xs\">\r\n          <i class=\"glyphicon glyphicon-share\">\r\n          </i> Chia sẻ\r\n        </button>\r\n        <button type=\"button\" class=\"btn btn-default btn-xs\">\r\n          <i class=\"glyphicon glyphicon-thumbs-up\">\r\n          </i> Thích\r\n        </button>\r\n        <hr class=\"thin bg-grayLighter\">\r\n        <!-- load phần tử danh mục trong chi tiết bệnh -->\r\n        <div *ngFor=\"let phantu of ChiTietBenh?.DsPhanTu\">\r\n          <h2 class=\"text-light\">\r\n            {{phantu?.Ten}}\r\n          </h2>\r\n          <hr class=\"thin bg-grayLighter\">\r\n\r\n          <!-- load dữ liệu chi tiết bệnh -->\r\n          <div *ngFor=\"let dulieu of phantu?.NoiDung?.DsDuLieuNoiDung\">\r\n\r\n            <!-- load dữ liệu text -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 1\">\r\n              <app-load-du-lieu-text [dulieuText]=\"dulieu?.Dulieu\">\r\n              </app-load-du-lieu-text>\r\n            </div>\r\n\r\n            <!-- load dữ liệu ảnh -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 2\">\r\n              <app-load-du-lieu-img [dulieuImg]=\"dulieu?.Dulieu\" [duLieuLinkAnh]=\"ChiTietBenh?.LinkAnh\" [dulieuImgTieuDe]=\"dulieu?.TieuDe\">\r\n              </app-load-du-lieu-img>\r\n              <br/>\r\n              <br/>\r\n            </div>\r\n\r\n            <!-- load dữ liệu clip Youtube -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 5\">\r\n              <app-load-du-lieu-youtube [dulieuYoutube]=\"dulieu?.Dulieu\" [dulieuYoutubeTieuDe]=\"dulieu?.TieuDe\">\r\n              </app-load-du-lieu-youtube>\r\n              <br/>\r\n              <br/>\r\n              <br/>\r\n            </div>\r\n\r\n            <!-- load dữ liệu link -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 10\">\r\n              <app-load-du-lieu-link [dulieuLink]=\"dulieu?.Dulieu\" [dulieuLinkTieuDe]=\"dulieu?.TieuDe\">\r\n              </app-load-du-lieu-link>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n        <!--<div class=\"img-wr\">\r\n    <img src=\"assets/images/dengue.jpg\">\r\n  </div>-->\r\n\r\n\r\n      </div>\r\n    </div>\r\n    <!-- end content left -->\r\n    <!-- start forum bar -->\r\n    <app-forum-bar></app-forum-bar>\r\n    <!-- end forum bar -->\r\n  </div>\r\n  <!-- end content wrapper -->\r\n</div>\r\n"
+module.exports = "<!-- start content wrapper -->\r\n<div class=\"main\" [ngStyle]=\"{'background-image': 'url('+ styleConfig?.Background +')'}\">\r\n  <!-- Start col left 2 -->\r\n  <div class=\"col-left-content\" >\r\n    <div class=\"title-col\" [style.background]=\"styleConfig?.MauNhat\">\r\n      <div style=\"display:flex; flex-direction: row;\">\r\n        <div>\r\n          <span class=\"fa fa-fw {{iconText}} icon\" style=\"padding-top:15px; padding-right:10px;\"></span>\r\n        </div>\r\n        <div>\r\n          <h3 class=\"big-title\" style=\"cursor: default\">Bệnh A-Z</h3>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"search-box-top\">\r\n      <div class=\"input-control text full-size\" data-role=\"input\">\r\n        <span class=\"fa fa-fw fa-search icon icon-search\" aria-hidden=\"true\"></span>\r\n        <input type=\"text\" placeholder=\"Nhập tên bệnh...\" [formControl]=\"searchKey\">\r\n      </div>\r\n      <div style=\"padding: 5px 0 0 0;\">\r\n        <span style=\"font-size: 11px; color: #888; float: right;\">\r\n          {{startBenh}}-{{endBenh}}/{{TongSoLuong}} bệnh\r\n        </span>\r\n      </div>\r\n      <hr class=\"thin bg-grayLighter\">\r\n    </div>\r\n    <div class=\"text-center\">\r\n      <p class=\"lead\" *ngIf=\"loading\">\r\n        <img src=\"assets/66.gif\">\r\n      </p>\r\n    </div>\r\n    <ul class=\"scrollbar-custom\" infinite-scroll [infiniteScrollDistance]=\"2\" [infiniteScrollThrottle]=\"500\" (scrolled)=\"onScroll()\"\r\n      [scrollWindow]=\"false\">\r\n\r\n      <!--<li *ngFor=\"let benh of DsBenh\">\r\n          <a href=\"#\">\r\n                  <span class=\"title\">{{benh.Name}}</span>\r\n              </a>\r\n      </li>-->\r\n\r\n      <li *ngIf=\"!loading\">\r\n        <div class=\"text-center\" *ngIf=\"empty\">\r\n          <p>\r\n            <a> Không kết quả nào phù hợp</a>\r\n          </p>\r\n        </div>\r\n        <div *ngIf=\"!empty\">\r\n          <a style=\"cursor: pointer;\" *ngFor=\"let benh of DsBenh\">\r\n\r\n            <span class=\"title\" (click)=\"clickBenh(benh.Id)\">{{benh.Name}}</span>\r\n          </a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <!-- end col left 2 -->\r\n  <!-- Start content -->\r\n  <div *ngIf=\"showChiTiet\" class=\"content-box\">\r\n    <div class=\"title-col\">\r\n      <h3 class=\"big-title\" style=\"cursor: default\">{{ChiTietBenh?.TenBenh}}</h3>\r\n      <button class=\"bt-close\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\r\n    </div>\r\n    <!-- Start content left -->\r\n    <div class=\"content-left\">\r\n\r\n      <div class=\"content-header\">\r\n        <div class=\"bt-bar\">\r\n          <a href=\"#\" class=\"bt-features\"><span class=\"fa fa-fw fa-calendar-check-o glyphicon\"></span>Đặt lịch khám</a>\r\n          <a href=\"#\" class=\"bt-features\"><span class=\"fa fa-fw fa-user-md glyphicon\"></span>Phương pháp điều trị</a>\r\n        </div>\r\n        <!--<h1 class=\"text-light title-top\">Sốt Dengue</h1>\r\n      <button class=\"button alert bt-booking\"><span class=\"glyphicon glyphicon-calendar\"></span> Đặt lịch khám</button>-->\r\n        <hr class=\"thin bg-grayLighter\">\r\n      </div>\r\n      <!-- load mô tả chi tiết bệnh -->\r\n      <div class=\"content-box-main scrollbar-custom\">\r\n        <dl class=\"dl-horizontal\">\r\n          <dt>\r\n            Chuyên khoa\r\n          </dt>\r\n          <dd>\r\n            {{ChiTietBenh?.DsChuyenKhoa[0]?.TenChuyenKhoa}}\r\n          </dd>\r\n          <dt>\r\n            Tóm tắt\r\n          </dt>\r\n          <dd [innerHTML]=\"ChiTietBenh?.TomTat\"></dd>\r\n        </dl>\r\n        <button type=\"button\" class=\"btn btn-default btn-xs\">\r\n          <i class=\"glyphicon glyphicon-share\">\r\n          </i> Chia sẻ\r\n        </button>\r\n        <button type=\"button\" class=\"btn btn-default btn-xs\">\r\n          <i class=\"glyphicon glyphicon-thumbs-up\">\r\n          </i> Thích\r\n        </button>\r\n        <hr class=\"thin bg-grayLighter\">\r\n        <!-- load phần tử danh mục trong chi tiết bệnh -->\r\n        <div *ngFor=\"let phantu of ChiTietBenh?.DsPhanTu\">\r\n          <h2 class=\"text-light\">\r\n            {{phantu?.Ten}}\r\n          </h2>\r\n          <hr class=\"thin bg-grayLighter\">\r\n\r\n          <!-- load dữ liệu chi tiết bệnh -->\r\n          <div *ngFor=\"let dulieu of phantu?.NoiDung?.DsDuLieuNoiDung\">\r\n\r\n            <!-- load dữ liệu text -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 1\">\r\n              <app-load-du-lieu-text [dulieuText]=\"dulieu?.Dulieu\">\r\n              </app-load-du-lieu-text>\r\n            </div>\r\n\r\n            <!-- load dữ liệu ảnh -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 2\">\r\n              <app-load-du-lieu-img [dulieuImg]=\"dulieu?.Dulieu\" [duLieuLinkAnh]=\"ChiTietBenh?.LinkAnh\" [dulieuImgTieuDe]=\"dulieu?.TieuDe\">\r\n              </app-load-du-lieu-img>\r\n              <br/>\r\n              <br/>\r\n            </div>\r\n\r\n            <!-- load dữ liệu clip Youtube -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 5\">\r\n              <app-load-du-lieu-youtube [dulieuYoutube]=\"dulieu?.Dulieu\" [dulieuYoutubeTieuDe]=\"dulieu?.TieuDe\">\r\n              </app-load-du-lieu-youtube>\r\n              <br/>\r\n              <br/>\r\n              <br/>\r\n            </div>\r\n\r\n            <!-- load dữ liệu link -->\r\n            <div *ngIf=\"dulieu?.LoaiDuLieu == 10\">\r\n              <app-load-du-lieu-link [dulieuLink]=\"dulieu?.Dulieu\" [dulieuLinkTieuDe]=\"dulieu?.TieuDe\">\r\n              </app-load-du-lieu-link>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n        <!--<div class=\"img-wr\">\r\n    <img src=\"assets/images/dengue.jpg\">\r\n  </div>-->\r\n\r\n\r\n      </div>\r\n    </div>\r\n    <!-- end content left -->\r\n    <!-- start forum bar -->\r\n    <app-forum-bar></app-forum-bar>\r\n    <!-- end forum bar -->\r\n  </div>\r\n  <!-- end content wrapper -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1893,6 +1901,7 @@ module.exports = "<!-- start content wrapper -->\r\n<div class=\"main\">\r\n  <!
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/add/operator/distinctUntilChanged.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_distinctUntilChanged___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_distinctUntilChanged__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_menu_service__ = __webpack_require__("../../../../../src/app/services/menu.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TraCuuBenhComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1911,21 +1920,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var TraCuuBenhComponent = (function () {
-    function TraCuuBenhComponent(nav, leftNav, benhService) {
-        // this.searchChangeEmitter = <any>this.searchUpdate
-        //     // .asObservable()
-        //     .debounceTime(1000)
-        //     .distinctUntilChanged()// accept only relevant chars
-        //     ;
-        // this.searchUpdate
-        //     .debounceTime(300)
-        //     .distinctUntilChanged()
-        //     .subscribe(searchKey => this.searchKey = searchKey);
+    function TraCuuBenhComponent(nav, leftNav, benhService, menuService) {
         var _this = this;
         this.nav = nav;
         this.leftNav = leftNav;
         this.benhService = benhService;
+        this.menuService = menuService;
         this.ChiTietBenh = null;
         this.searchUpdate = new __WEBPACK_IMPORTED_MODULE_4_rxjs_Subject__["Subject"]();
         this.searchKey = new __WEBPACK_IMPORTED_MODULE_7__angular_forms__["c" /* FormControl */]();
@@ -1935,6 +1937,16 @@ var TraCuuBenhComponent = (function () {
         this.loadMore = false;
         this.isSearch = false;
         this.page = 1;
+        this.styleConfig = this.menuService.getSetting();
+        // this.searchChangeEmitter = <any>this.searchUpdate
+        //     // .asObservable()
+        //     .debounceTime(1000)
+        //     .distinctUntilChanged()// accept only relevant chars
+        //     ;
+        // this.searchUpdate
+        //     .debounceTime(300)
+        //     .distinctUntilChanged()
+        //     .subscribe(searchKey => this.searchKey = searchKey);
         this.searchKey.valueChanges
             .debounceTime(1000)
             .subscribe(function (event) {
@@ -2034,10 +2046,10 @@ TraCuuBenhComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/tra-cuu-benh/tra-cuu-benh.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/tra-cuu-benh/tra-cuu-benh.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_top_nav_navbar_service__["a" /* NavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_top_nav_navbar_service__["a" /* NavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_benh_service__["a" /* BenhService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_benh_service__["a" /* BenhService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_top_nav_navbar_service__["a" /* NavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_top_nav_navbar_service__["a" /* NavbarService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_benh_service__["a" /* BenhService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_benh_service__["a" /* BenhService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_8__services_menu_service__["a" /* MenuService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__services_menu_service__["a" /* MenuService */]) === "function" && _d || Object])
 ], TraCuuBenhComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=tra-cuu-benh.component.js.map
 
 /***/ }),
@@ -2407,6 +2419,7 @@ var MenuService = (function () {
         this.http = http;
         this.document = document;
         this.home = [];
+        this.setting = [];
         this.menu = '';
     }
     MenuService.prototype.getStartScreen = function () {
@@ -2427,8 +2440,9 @@ var MenuService = (function () {
     MenuService.prototype.setSetting = function (data) {
         localStorage.setItem('site_setting', JSON.stringify(data));
     };
-    MenuService.prototype.getSetting = function (data) {
-        return JSON.parse(localStorage.getItem('site_setting'));
+    MenuService.prototype.getSetting = function () {
+        this.setting = JSON.parse(localStorage.getItem('site_setting'));
+        return this.setting;
     };
     return MenuService;
 }());

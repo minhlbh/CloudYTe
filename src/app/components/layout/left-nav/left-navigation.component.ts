@@ -3,6 +3,7 @@ import { LeftNavbarService } from '../../../services/left-nav/left-navbar.servic
 import { element } from 'app/models/phan-tu-menu-left';
 import { Router, RouterLink } from '@angular/router';
 import * as $ from 'jquery';
+import { MenuService } from '../../../services/menu.service';
 
 @Component({
     selector: 'left-app-navigation',
@@ -13,10 +14,14 @@ export class LeftNavigationComponent implements OnInit {
     private elements: element[];
     private iconText: string;
     public fullwidth = true;
+    public styleConfig: any;
     constructor(
         public leftNav: LeftNavbarService,
-        private router: Router
-    ) { }
+        private router: Router,
+        public menuService: MenuService,
+    ) {
+        this.styleConfig = this.menuService.getSetting();
+    }
 
     ngOnInit() {
         this.leftNav.show();
@@ -31,9 +36,8 @@ export class LeftNavigationComponent implements OnInit {
     }
     changeMNView() {
         this.fullwidth = !this.fullwidth;
-        console.log("run")
-            $(".col-left-fixed").toggleClass("toggled");
-            $(".main").toggleClass("toggled");
+        $(".col-left-fixed").toggleClass("toggled");
+        $(".main").toggleClass("toggled");
     }
 
 }

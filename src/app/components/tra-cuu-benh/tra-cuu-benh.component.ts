@@ -8,6 +8,7 @@ import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/distinctUntilChanged";
 import { FormControl } from '@angular/forms';
 import { chiTietBenh } from "app/models/chiTietBenh";
+import { MenuService } from '../../services/menu.service';
 
 
 @Component({
@@ -28,17 +29,20 @@ export class TraCuuBenhComponent implements OnInit {
     searchUpdate: Subject<string> = new Subject<string>();
     searchKey = new FormControl();
     public id: any;
-    public loading: boolean = false;
-    public empty: boolean = false;
-    public showChiTiet: boolean = false;
+    public loading = false;
+    public empty = false;
+    public showChiTiet = false;
     public loadMore = false;
     public isSearch = false;
-    public page: number = 1;
+    public page = 1;
+    public styleConfig: any;
     constructor(
         public nav: NavbarService,
         public leftNav: LeftNavbarService,
-        private benhService: BenhService
+        private benhService: BenhService,
+        public menuService: MenuService,
     ) {
+        this.styleConfig = this.menuService.getSetting();
         // this.searchChangeEmitter = <any>this.searchUpdate
         //     // .asObservable()
         //     .debounceTime(1000)

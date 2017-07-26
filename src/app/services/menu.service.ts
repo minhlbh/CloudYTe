@@ -10,6 +10,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 @Injectable()
 export class MenuService {
     private home = [];
+    private setting = [];
     constructor(
         private http: Http,
         @Inject(DOCUMENT) private document
@@ -32,11 +33,12 @@ export class MenuService {
         localStorage.setItem('home_menu', JSON.stringify(data));
         this.home = data;
     }
-    setSetting(data){
+    setSetting(data) {
         localStorage.setItem('site_setting', JSON.stringify(data));
     }
-    getSetting(data){
-        return JSON.parse(localStorage.getItem('site_setting'));
+    getSetting() {
+        this.setting = JSON.parse(localStorage.getItem('site_setting'));
+        return this.setting;
     }
 
 }

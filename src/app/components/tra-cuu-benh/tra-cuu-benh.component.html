@@ -1,8 +1,8 @@
 ﻿<!-- start content wrapper -->
-<div class="main">
+<div class="main" [ngStyle]="{'background-image': 'url('+ styleConfig?.Background +')'}">
   <!-- Start col left 2 -->
-  <div class="col-left-content">
-    <div class="title-col">
+  <div class="col-left-content" >
+    <div class="title-col" [style.background]="styleConfig?.MauNhat">
       <div style="display:flex; flex-direction: row;">
         <div>
           <span class="fa fa-fw {{iconText}} icon" style="padding-top:15px; padding-right:10px;"></span>
