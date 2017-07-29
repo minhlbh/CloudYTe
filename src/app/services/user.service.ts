@@ -23,29 +23,29 @@ export class UserService {
 	getUser(token_type, token): Observable<any> {
 		let header = new Headers();
 		header.append('Authorization', `Bearer ${token}`);
-		return this.http.get(`http://truongkhoa.com/api/Account/UserInfo`, this.jwt())
+		return this.http.get(`http://api.truongkhoa.com/api/Account/UserInfo`, this.jwt())
 			// ...and calling .json() on the response to return data
 			.map((res: Response) => res.json())
 			;
 
-			
-			
+
+
 	}
 
 	jwt() {
         // create authorization header with jwt token
-		
+
         const headers = new Headers({ 'Authorization': "bearer " + this.getLocalToken() });
         headers.append('Content-Type', 'application/json');
 		headers.append('Accept', 'application/json');
 		console.log(headers)
         return new RequestOptions({ headers: headers });
 	}
-	
+
 	forgotPassword(phone){
 		let body = new URLSearchParams();
 		body.set('Phone', phone);
-		return this.http.post(`http://truongkhoa.com/api/Account/ForgotPassword`,body).map((response: Response) => response.json());
+		return this.http.post(`http://api.truongkhoa.com/api/Account/ForgotPassword`,body).map((response: Response) => response.json());
 	}
 
 	changePass(newPass, code, phone, idU){
@@ -53,7 +53,7 @@ export class UserService {
 		body.set('PhoneNumber', phone);
 		body.set('Code', code);
 		body.set('Password', newPass);
-		return this.http.post('http://truongkhoa.com/api/Account/ForgotPassword?IdU=' + idU, body).map((response: Response) => response.json());
+		return this.http.post('http://api.truongkhoa.com/api/Account/ForgotPassword?IdU=' + idU, body).map((response: Response) => response.json());
 	}
 
 	login(username, password) {
@@ -61,7 +61,7 @@ export class UserService {
 		body.set('username', username);
 		body.set('password', password);
 		body.set('grant_type', "password");
-		return this.http.post(`http://truongkhoa.com/Token`, body).map((response: Response) => response.json());
+		return this.http.post(`http://api.truongkhoa.com/Token`, body).map((response: Response) => response.json());
 	}
 
 	register(name, email, phone, password) {
@@ -71,7 +71,7 @@ export class UserService {
 		body.set('Phone', phone);
 		body.set('Password', password);
 
-		return this.http.post('http://truongkhoa.com/api/Account/Register', body).map((response: Response) => response.json());
+		return this.http.post('http://api.truongkhoa.com/api/Account/Register', body).map((response: Response) => response.json());
 	}
 
 	verifyCode(code, phone, idUser) {
@@ -80,7 +80,7 @@ export class UserService {
 		body.set('PhoneNumber', phone);
 
 
-		return this.http.post('http://truongkhoa.com/api/Account/XacNhanPhone?IdU=' + idUser, body).map((response: Response) => response.json());
+		return this.http.post('http://api.truongkhoa.com/api/Account/XacNhanPhone?IdU=' + idUser, body).map((response: Response) => response.json());
 	}
 
 	setTokenType(token_type: string) {

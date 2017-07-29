@@ -8,7 +8,7 @@ export class ForumBarService {
   constructor(private http: Http) { }
   getForumBar(): Observable<any> {
         // ...using get request
-        return this.http.get(`http://truongkhoa.com/api/Forum`)
+        return this.http.get(`http://api.truongkhoa.com/api/Forum`)
             // ...and calling .json() on the response to return data
             .map((res: Response) => res.json())
             //...errors if any
