@@ -1,5 +1,200 @@
 webpackJsonp([4],{
 
+/***/ "../../../../angular-svg-icon/angular-svg-icon.module.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__svg_icon_component__ = __webpack_require__("../../../../angular-svg-icon/svg-icon.component.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AngularSvgIconModule; });
+
+
+
+
+var AngularSvgIconModule = (function () {
+    function AngularSvgIconModule() {
+    }
+    return AngularSvgIconModule;
+}());
+
+AngularSvgIconModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                imports: [
+                    __WEBPACK_IMPORTED_MODULE_1__angular_common__["e" /* CommonModule */],
+                    __WEBPACK_IMPORTED_MODULE_2__angular_http__["HttpModule"]
+                ],
+                declarations: [__WEBPACK_IMPORTED_MODULE_3__svg_icon_component__["a" /* SvgIconComponent */]],
+                providers: [__WEBPACK_IMPORTED_MODULE_3__svg_icon_component__["b" /* SVG_ICON_REGISTRY_PROVIDER */]],
+                exports: [__WEBPACK_IMPORTED_MODULE_3__svg_icon_component__["a" /* SvgIconComponent */]]
+            },] },
+];
+AngularSvgIconModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=angular-svg-icon.module.js.map
+
+/***/ }),
+
+/***/ "../../../../angular-svg-icon/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_svg_icon_module__ = __webpack_require__("../../../../angular-svg-icon/angular-svg-icon.module.js");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__angular_svg_icon_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__svg_icon_registry_service__ = __webpack_require__("../../../../angular-svg-icon/svg-icon-registry.service.js");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__svg_icon_component__ = __webpack_require__("../../../../angular-svg-icon/svg-icon.component.js");
+/* unused harmony namespace reexport */
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../../../../angular-svg-icon/svg-icon-registry.service.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__("../../../../rxjs/add/observable/of.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_do__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_finally__ = __webpack_require__("../../../../rxjs/add/operator/finally.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_finally___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_finally__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_share__ = __webpack_require__("../../../../rxjs/add/operator/share.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_share__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SvgIconRegistryService; });
+
+
+
+
+
+
+
+
+var SvgIconRegistryService = (function () {
+    function SvgIconRegistryService(http) {
+        this.http = http;
+        this.iconsByUrl = new Map();
+        this.iconsLoadingByUrl = new Map();
+    }
+    SvgIconRegistryService.prototype.loadSvg = function (url) {
+        var _this = this;
+        if (this.iconsByUrl.has(url)) {
+            return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].of(this.iconsByUrl.get(url));
+        }
+        else if (this.iconsLoadingByUrl.has(url)) {
+            return this.iconsLoadingByUrl.get(url);
+        }
+        else {
+            var o = this.http.get(url)
+                .map(function (res) {
+                var div = document.createElement('DIV');
+                div.innerHTML = res.text();
+                return div.querySelector('svg');
+            })
+                .do(function (svg) {
+                _this.iconsByUrl.set(url, svg);
+            })
+                .finally(function () {
+                _this.iconsLoadingByUrl.delete(url);
+            })
+                .share();
+            this.iconsLoadingByUrl.set(url, o);
+            return o;
+        }
+    };
+    SvgIconRegistryService.prototype.unloadSvg = function (url) {
+        if (this.iconsByUrl.has(url)) {
+            this.iconsByUrl.delete(url);
+        }
+    };
+    return SvgIconRegistryService;
+}());
+
+SvgIconRegistryService.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+SvgIconRegistryService.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"], },
+]; };
+//# sourceMappingURL=svg-icon-registry.service.js.map
+
+/***/ }),
+
+/***/ "../../../../angular-svg-icon/svg-icon.component.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__svg_icon_registry_service__ = __webpack_require__("../../../../angular-svg-icon/svg-icon-registry.service.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SvgIconComponent; });
+/* unused harmony export SVG_ICON_REGISTRY_PROVIDER_FACTORY */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SVG_ICON_REGISTRY_PROVIDER; });
+
+
+
+var SvgIconComponent = (function () {
+    function SvgIconComponent(element, renderer, iconReg) {
+        this.element = element;
+        this.renderer = renderer;
+        this.iconReg = iconReg;
+    }
+    SvgIconComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.icnSub = this.iconReg.loadSvg(this.src).subscribe(function (svg) {
+            _this.setSvg(svg);
+        });
+    };
+    SvgIconComponent.prototype.ngOnDestroy = function () {
+        if (this.icnSub) {
+            this.icnSub.unsubscribe();
+        }
+    };
+    SvgIconComponent.prototype.setSvg = function (svg) {
+        var icon = svg.cloneNode(true);
+        var elem = this.element.nativeElement;
+        elem.innerHTML = '';
+        this.renderer.projectNodes(elem, [icon]);
+    };
+    return SvgIconComponent;
+}());
+
+SvgIconComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'svg-icon',
+                styles: [':host { display:inline-block; }'],
+                template: '<ng-content></ng-content>'
+            },] },
+];
+SvgIconComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__svg_icon_registry_service__["a" /* SvgIconRegistryService */], },
+]; };
+SvgIconComponent.propDecorators = {
+    'src': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+function SVG_ICON_REGISTRY_PROVIDER_FACTORY(parentRegistry, http) {
+    return parentRegistry || new __WEBPACK_IMPORTED_MODULE_2__svg_icon_registry_service__["a" /* SvgIconRegistryService */](http);
+}
+var SVG_ICON_REGISTRY_PROVIDER = {
+    provide: __WEBPACK_IMPORTED_MODULE_2__svg_icon_registry_service__["a" /* SvgIconRegistryService */],
+    deps: [[new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"](), new __WEBPACK_IMPORTED_MODULE_0__angular_core__["SkipSelf"](), __WEBPACK_IMPORTED_MODULE_2__svg_icon_registry_service__["a" /* SvgIconRegistryService */]], __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]],
+    useFactory: SVG_ICON_REGISTRY_PROVIDER_FACTORY
+};
+//# sourceMappingURL=svg-icon.component.js.map
+
+/***/ }),
+
 /***/ "../../../../angular2-infinite-scroll/angular2-infinite-scroll.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10783,6 +10978,398 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
+
+
+/***/ }),
+
+/***/ "../../../../ng-inline-svg/lib/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var inline_svg_directive_1 = __webpack_require__("../../../../ng-inline-svg/lib/inline-svg.directive.js");
+exports.InlineSVGDirective = inline_svg_directive_1.InlineSVGDirective;
+var inline_svg_module_1 = __webpack_require__("../../../../ng-inline-svg/lib/inline-svg.module.js");
+exports.InlineSVGModule = inline_svg_module_1.InlineSVGModule;
+var svg_cache_service_1 = __webpack_require__("../../../../ng-inline-svg/lib/svg-cache.service.js");
+exports.SVGCacheService = svg_cache_service_1.SVGCacheService;
+
+
+/***/ }),
+
+/***/ "../../../../ng-inline-svg/lib/inline-svg.component.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var utils_1 = __webpack_require__("../../../../ng-inline-svg/lib/utils.js");
+var InlineSVGComponent = (function () {
+    function InlineSVGComponent(_el) {
+        this._el = _el;
+    }
+    InlineSVGComponent.prototype.ngAfterViewInit = function () {
+        this._updateContent();
+    };
+    InlineSVGComponent.prototype.ngOnChanges = function (changes) {
+        if (changes['content']) {
+            this._updateContent();
+        }
+    };
+    InlineSVGComponent.prototype._updateContent = function () {
+        utils_1.insertEl(this.context, this._el.nativeElement, this.content, this.replaceContents, this.prepend);
+    };
+    InlineSVGComponent.decorators = [
+        { type: core_1.Component, args: [{
+                    selector: 'inline-svg',
+                    template: '',
+                    changeDetection: core_1.ChangeDetectionStrategy.OnPush
+                },] },
+    ];
+    InlineSVGComponent.ctorParameters = function () { return [
+        { type: core_1.ElementRef, },
+    ]; };
+    InlineSVGComponent.propDecorators = {
+        'context': [{ type: core_1.Input },],
+        'content': [{ type: core_1.Input },],
+        'replaceContents': [{ type: core_1.Input },],
+        'prepend': [{ type: core_1.Input },],
+    };
+    return InlineSVGComponent;
+}());
+exports.InlineSVGComponent = InlineSVGComponent;
+
+
+/***/ }),
+
+/***/ "../../../../ng-inline-svg/lib/inline-svg.directive.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var svg_cache_service_1 = __webpack_require__("../../../../ng-inline-svg/lib/svg-cache.service.js");
+var utils_1 = __webpack_require__("../../../../ng-inline-svg/lib/utils.js");
+var InlineSVGDirective = (function () {
+    function InlineSVGDirective(_el, _svgCache) {
+        this._el = _el;
+        this._svgCache = _svgCache;
+        this.replaceContents = true;
+        this.prepend = false;
+        this.cacheSVG = true;
+        this.forceEvalStyles = false;
+        this.evalScripts = 'always';
+        this.onSVGInserted = new core_1.EventEmitter();
+        this.onSVGFailed = new core_1.EventEmitter();
+        this._ranScripts = {};
+        this._isBrowser = utils_1.isBrowser();
+        this._supportsSVG = utils_1.checkSVGSupport();
+        if (!this._supportsSVG) {
+            this._fail('Embed SVG not supported by browser');
+        }
+    }
+    InlineSVGDirective.prototype.ngOnInit = function () {
+        if (!this._isBrowser) {
+            return;
+        }
+        this._insertSVG();
+    };
+    InlineSVGDirective.prototype.ngOnChanges = function (changes) {
+        if (!this._isBrowser) {
+            return;
+        }
+        if (changes['inlineSVG']) {
+            this._insertSVG();
+        }
+    };
+    InlineSVGDirective.prototype.ngOnDestroy = function () {
+        if (this._subscription) {
+            this._subscription.unsubscribe();
+        }
+    };
+    InlineSVGDirective.prototype._insertSVG = function () {
+        var _this = this;
+        if (!this._supportsSVG) {
+            return;
+        }
+        if (!this.inlineSVG) {
+            this._fail('No URL passed to [inlineSVG]');
+            return;
+        }
+        if (this.inlineSVG.charAt(0) === '#' || this.inlineSVG.indexOf('.svg#') > -1) {
+            var elSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            var elSvgUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+            elSvgUse.setAttributeNS('http://www.w3.org/1999/xlink', 'href', this.inlineSVG);
+            elSvg.appendChild(elSvgUse);
+            this._insertEl(elSvg);
+            this.onSVGInserted.emit(elSvg);
+            return;
+        }
+        if (this.inlineSVG !== this._prevUrl) {
+            this._prevUrl = this.inlineSVG;
+            this._subscription = this._svgCache.getSVG(this.inlineSVG, this.cacheSVG)
+                .subscribe(function (svg) {
+                if (!svg) {
+                    return;
+                }
+                if (_this.removeSVGAttributes) {
+                    _this._removeAttributes(svg, _this.removeSVGAttributes);
+                }
+                _this._insertEl(svg);
+                _this._evalScripts(svg, _this.inlineSVG);
+                if (_this.forceEvalStyles) {
+                    var styleTags = svg.querySelectorAll('style');
+                    Array.prototype.forEach.call(styleTags, function (tag) { return tag.textContent += ''; });
+                }
+                _this.onSVGInserted.emit(svg);
+            }, function (err) {
+                _this._fail(err);
+            });
+        }
+    };
+    InlineSVGDirective.prototype._insertEl = function (el) {
+        utils_1.insertEl(this, this._el.nativeElement, el, this.replaceContents, this.prepend);
+    };
+    InlineSVGDirective.prototype._removeAttributes = function (svg, attrs) {
+        var innerEls = svg.getElementsByTagName('*');
+        for (var i = 0; i < innerEls.length; i++) {
+            var elAttrs = innerEls[i].attributes;
+            for (var j = 0; j < elAttrs.length; j++) {
+                if (attrs.indexOf(elAttrs[j].name.toLowerCase()) > -1) {
+                    innerEls[i].removeAttribute(elAttrs[j].name);
+                }
+            }
+        }
+    };
+    InlineSVGDirective.prototype._evalScripts = function (svg, url) {
+        var scripts = svg.querySelectorAll('script');
+        var scriptsToEval = [];
+        var script, scriptType;
+        for (var i = 0; i < scripts.length; i++) {
+            scriptType = scripts[i].getAttribute('type');
+            if (!scriptType || scriptType === 'application/ecmascript' || scriptType === 'application/javascript') {
+                script = scripts[i].innerText || scripts[i].textContent;
+                scriptsToEval.push(script);
+                svg.removeChild(scripts[i]);
+            }
+        }
+        if (scriptsToEval.length > 0 && (this.evalScripts === 'always' ||
+            (this.evalScripts === 'once' && !this._ranScripts[url]))) {
+            for (var i = 0; i < scriptsToEval.length; i++) {
+                new Function(scriptsToEval[i])(window);
+            }
+            this._ranScripts[url] = true;
+        }
+    };
+    InlineSVGDirective.prototype._fail = function (msg) {
+        this.onSVGFailed.emit(msg);
+        if (this.fallbackImgUrl) {
+            var elImg = document.createElement('IMG');
+            elImg.src = this.fallbackImgUrl;
+            this._insertEl(elImg);
+        }
+    };
+    InlineSVGDirective.decorators = [
+        { type: core_1.Directive, args: [{
+                    selector: '[inlineSVG]',
+                    providers: [svg_cache_service_1.SVGCacheService]
+                },] },
+    ];
+    InlineSVGDirective.ctorParameters = function () { return [
+        { type: core_1.ElementRef, },
+        { type: svg_cache_service_1.SVGCacheService, },
+    ]; };
+    InlineSVGDirective.propDecorators = {
+        'inlineSVG': [{ type: core_1.Input },],
+        'replaceContents': [{ type: core_1.Input },],
+        'prepend': [{ type: core_1.Input },],
+        'cacheSVG': [{ type: core_1.Input },],
+        'removeSVGAttributes': [{ type: core_1.Input },],
+        'forceEvalStyles': [{ type: core_1.Input },],
+        'evalScripts': [{ type: core_1.Input },],
+        'fallbackImgUrl': [{ type: core_1.Input },],
+        'onSVGInserted': [{ type: core_1.Output },],
+        'onSVGFailed': [{ type: core_1.Output },],
+    };
+    return InlineSVGDirective;
+}());
+exports.InlineSVGDirective = InlineSVGDirective;
+
+
+/***/ }),
+
+/***/ "../../../../ng-inline-svg/lib/inline-svg.module.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var inline_svg_component_1 = __webpack_require__("../../../../ng-inline-svg/lib/inline-svg.component.js");
+var inline_svg_directive_1 = __webpack_require__("../../../../ng-inline-svg/lib/inline-svg.directive.js");
+var svg_cache_service_1 = __webpack_require__("../../../../ng-inline-svg/lib/svg-cache.service.js");
+var InlineSVGModule = (function () {
+    function InlineSVGModule() {
+    }
+    InlineSVGModule.forRoot = function (config) {
+        return {
+            ngModule: InlineSVGModule,
+            providers: [
+                { provide: svg_cache_service_1.InlineSVGConfig, useValue: config }
+            ]
+        };
+    };
+    InlineSVGModule.decorators = [
+        { type: core_1.NgModule, args: [{
+                    declarations: [inline_svg_directive_1.InlineSVGDirective, inline_svg_component_1.InlineSVGComponent],
+                    imports: [http_1.HttpModule],
+                    exports: [inline_svg_directive_1.InlineSVGDirective],
+                    providers: [svg_cache_service_1.SVGCacheService],
+                    entryComponents: [inline_svg_component_1.InlineSVGComponent]
+                },] },
+    ];
+    InlineSVGModule.ctorParameters = function () { return []; };
+    return InlineSVGModule;
+}());
+exports.InlineSVGModule = InlineSVGModule;
+
+
+/***/ }),
+
+/***/ "../../../../ng-inline-svg/lib/svg-cache.service.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
+var http_1 = __webpack_require__("../../../http/@angular/http.es5.js");
+var Observable_1 = __webpack_require__("../../../../rxjs/Observable.js");
+__webpack_require__("../../../../rxjs/add/observable/of.js");
+__webpack_require__("../../../../rxjs/add/operator/catch.js");
+__webpack_require__("../../../../rxjs/add/operator/finally.js");
+__webpack_require__("../../../../rxjs/add/operator/map.js");
+__webpack_require__("../../../../rxjs/add/operator/share.js");
+var InlineSVGConfig = (function () {
+    function InlineSVGConfig() {
+    }
+    return InlineSVGConfig;
+}());
+exports.InlineSVGConfig = InlineSVGConfig;
+var SVGCacheService = (function () {
+    function SVGCacheService(config, _http) {
+        this._http = _http;
+        if (!SVGCacheService._baseUrl) {
+            this.setBaseUrl(config);
+        }
+        if (!SVGCacheService._cache) {
+            SVGCacheService._cache = new Map();
+        }
+        if (!SVGCacheService._inProgressReqs) {
+            SVGCacheService._inProgressReqs = new Map();
+        }
+    }
+    SVGCacheService.prototype.getSVG = function (url, cache) {
+        var _this = this;
+        if (cache === void 0) { cache = true; }
+        var absUrl = this._getAbsoluteUrl(url);
+        if (cache && SVGCacheService._cache.has(absUrl)) {
+            return Observable_1.Observable.of(this._cloneSVG(SVGCacheService._cache.get(absUrl)));
+        }
+        if (SVGCacheService._inProgressReqs.has(absUrl)) {
+            return SVGCacheService._inProgressReqs.get(absUrl);
+        }
+        var req = this._http.get(absUrl)
+            .map(function (res) { return res.text(); })
+            .catch(function (err) { return err; })
+            .finally(function () {
+            SVGCacheService._inProgressReqs.delete(absUrl);
+        })
+            .share()
+            .map(function (svgText) {
+            var svgEl = _this._svgElementFromString(svgText);
+            SVGCacheService._cache.set(absUrl, svgEl);
+            return _this._cloneSVG(svgEl);
+        });
+        SVGCacheService._inProgressReqs.set(absUrl, req);
+        return req;
+    };
+    SVGCacheService.prototype.setBaseUrl = function (config) {
+        if (config) {
+            SVGCacheService._baseUrl = config.baseUrl;
+        }
+    };
+    SVGCacheService.prototype._getAbsoluteUrl = function (url) {
+        if (SVGCacheService._baseUrl) {
+            url = SVGCacheService._baseUrl + url;
+        }
+        var base = document.createElement('BASE');
+        base.href = url;
+        return base.href;
+    };
+    SVGCacheService.prototype._svgElementFromString = function (str) {
+        var div = document.createElement('DIV');
+        div.innerHTML = str;
+        var svg = div.querySelector('svg');
+        if (!svg) {
+            throw new Error('No SVG found in loaded contents');
+        }
+        return svg;
+    };
+    SVGCacheService.prototype._cloneSVG = function (svg) {
+        return svg.cloneNode(true);
+    };
+    SVGCacheService.decorators = [
+        { type: core_1.Injectable },
+    ];
+    SVGCacheService.ctorParameters = function () { return [
+        { type: InlineSVGConfig, decorators: [{ type: core_1.Optional },] },
+        { type: http_1.Http, },
+    ]; };
+    return SVGCacheService;
+}());
+exports.SVGCacheService = SVGCacheService;
+
+
+/***/ }),
+
+/***/ "../../../../ng-inline-svg/lib/utils.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function checkSVGSupport() {
+    return typeof SVGRect !== 'undefined';
+}
+exports.checkSVGSupport = checkSVGSupport;
+function insertEl(dir, parentEl, content, replaceContents, prepend) {
+    if (replaceContents && !prepend) {
+        var parentNode = dir._prevSVG && dir._prevSVG.parentNode;
+        if (parentNode) {
+            parentNode.removeChild(dir._prevSVG);
+        }
+        parentEl.innerHTML = '';
+    }
+    if (prepend) {
+        parentEl.insertBefore(content, parentEl.firstChild);
+    }
+    else {
+        parentEl.appendChild(content);
+    }
+    if (content.nodeName === 'svg') {
+        dir._prevSVG = content;
+    }
+}
+exports.insertEl = insertEl;
+function isBrowser() {
+    return new Function('try{return this===window;}catch(e){return false;}')();
+}
+exports.isBrowser = isBrowser;
 
 
 /***/ }),
@@ -90546,44 +91133,45 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__("../../../../tslib/tslib.es6.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* unused harmony export BrowserXhr */
-/* unused harmony export JSONPBackend */
-/* unused harmony export JSONPConnection */
-/* unused harmony export CookieXSRFStrategy */
-/* unused harmony export XHRBackend */
-/* unused harmony export XHRConnection */
-/* unused harmony export BaseRequestOptions */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RequestOptions; });
-/* unused harmony export BaseResponseOptions */
-/* unused harmony export ResponseOptions */
-/* unused harmony export ReadyState */
-/* unused harmony export RequestMethod */
-/* unused harmony export ResponseContentType */
-/* unused harmony export ResponseType */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Headers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Http; });
-/* unused harmony export Jsonp */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpModule; });
-/* unused harmony export JsonpModule */
-/* unused harmony export Connection */
-/* unused harmony export ConnectionBackend */
-/* unused harmony export XSRFStrategy */
-/* unused harmony export Request */
-/* unused harmony export Response */
-/* unused harmony export QueryEncoder */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return URLSearchParams; });
-/* unused harmony export VERSION */
-/* unused harmony export ɵg */
-/* unused harmony export ɵa */
-/* unused harmony export ɵf */
-/* unused harmony export ɵb */
-/* unused harmony export ɵc */
-/* unused harmony export ɵd */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserXhr", function() { return BrowserXhr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONPBackend", function() { return JSONPBackend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONPConnection", function() { return JSONPConnection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CookieXSRFStrategy", function() { return CookieXSRFStrategy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XHRBackend", function() { return XHRBackend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XHRConnection", function() { return XHRConnection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseRequestOptions", function() { return BaseRequestOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestOptions", function() { return RequestOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseResponseOptions", function() { return BaseResponseOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseOptions", function() { return ResponseOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReadyState", function() { return ReadyState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestMethod", function() { return RequestMethod; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseContentType", function() { return ResponseContentType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseType", function() { return ResponseType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Headers", function() { return Headers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Http", function() { return Http; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Jsonp", function() { return Jsonp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpModule", function() { return HttpModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JsonpModule", function() { return JsonpModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Connection", function() { return Connection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConnectionBackend", function() { return ConnectionBackend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XSRFStrategy", function() { return XSRFStrategy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Request", function() { return Request; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Response", function() { return Response; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QueryEncoder", function() { return QueryEncoder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URLSearchParams", function() { return URLSearchParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VERSION", function() { return VERSION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵg", function() { return BrowserJsonp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return JSONPBackend_; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵf", function() { return Body; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return _createDefaultCookieXSRFStrategy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return httpFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return jsonpFactory; });
 
 /**
  * @license Angular v4.3.1

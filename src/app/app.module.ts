@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { ForumBarComponent } from './components/forum-bar/forum-bar.component';
 
 import { ThayDoiMatKhauComponent } from './components/thay-doi-mat-khau/thay-doi-mat-khau.component'
 import { HoiChanTrucTuyenComponent } from './components/hoi-chan-truc-tuyen/hoi-chan-truc-tuyen.component';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -103,6 +105,8 @@ const appRoutes: Routes = [
         HttpModule,
         InfiniteScrollModule,
         BrowserAnimationsModule,
+        AngularSvgIconModule,
+        InlineSVGModule,
         RouterModule.forRoot(
             appRoutes,
             { enableTracing: false, useHash: true }

@@ -118,37 +118,40 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_infinite_scroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_infinite_scroll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/components/page-not-found/page-not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_layout_navigation_navigation_component__ = __webpack_require__("../../../../../src/app/components/layout/navigation/navigation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_layout_left_nav_left_navigation_component__ = __webpack_require__("../../../../../src/app/components/layout/left-nav/left-navigation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_tra_cuu_benh_tra_cuu_benh_component__ = __webpack_require__("../../../../../src/app/components/tra-cuu-benh/tra-cuu-benh.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_thuoc_thuoc_component__ = __webpack_require__("../../../../../src/app/components/thuoc/thuoc.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_chi_tiet_benh_chi_tiet_benh_component__ = __webpack_require__("../../../../../src/app/components/chi-tiet-benh/chi-tiet-benh.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_chi_tiet_thuoc_chi_tiet_thuoc_component__ = __webpack_require__("../../../../../src/app/components/chi-tiet-thuoc/chi-tiet-thuoc.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_top_nav_navbar_service__ = __webpack_require__("../../../../../src/app/services/top-nav/navbar.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_left_nav_left_navbar_service__ = __webpack_require__("../../../../../src/app/services/left-nav/left-navbar.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_so_yba_so_yba_component__ = __webpack_require__("../../../../../src/app/components/so-yba/so-yba.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__directives_app_auto_focus_directive__ = __webpack_require__("../../../../../src/app/directives/app-auto-focus.directive.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_benh_service__ = __webpack_require__("../../../../../src/app/services/benh.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_menu_service__ = __webpack_require__("../../../../../src/app/services/menu.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_forum_bar_service__ = __webpack_require__("../../../../../src/app/services/forum-bar.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_verify_code_verify_code_component__ = __webpack_require__("../../../../../src/app/components/verify-code/verify-code.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_load_du_lieu_text_load_du_lieu_text_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-text/load-du-lieu-text.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_load_du_lieu_img_load_du_lieu_img_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-img/load-du-lieu-img.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_chan_doan_hinh_anh_chan_doan_hinh_anh_component__ = __webpack_require__("../../../../../src/app/components/chan-doan-hinh-anh/chan-doan-hinh-anh.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_load_du_lieu_youtube_load_du_lieu_youtube_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-youtube/load-du-lieu-youtube.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_load_du_lieu_link_load_du_lieu_link_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-link/load-du-lieu-link.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pipes_safe_url_pipe__ = __webpack_require__("../../../../../src/app/pipes/safe-url.pipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_logout_logout_component__ = __webpack_require__("../../../../../src/app/components/logout/logout.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_quen_mat_khau_quen_mat_khau_component__ = __webpack_require__("../../../../../src/app/components/quen-mat-khau/quen-mat-khau.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_forum_bar_forum_bar_component__ = __webpack_require__("../../../../../src/app/components/forum-bar/forum-bar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_thay_doi_mat_khau_thay_doi_mat_khau_component__ = __webpack_require__("../../../../../src/app/components/thay-doi-mat-khau/thay-doi-mat-khau.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_hoi_chan_truc_tuyen_hoi_chan_truc_tuyen_component__ = __webpack_require__("../../../../../src/app/components/hoi-chan-truc-tuyen/hoi-chan-truc-tuyen.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angular_svg_icon__ = __webpack_require__("../../../../angular-svg-icon/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/components/page-not-found/page-not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_layout_navigation_navigation_component__ = __webpack_require__("../../../../../src/app/components/layout/navigation/navigation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_layout_left_nav_left_navigation_component__ = __webpack_require__("../../../../../src/app/components/layout/left-nav/left-navigation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_tra_cuu_benh_tra_cuu_benh_component__ = __webpack_require__("../../../../../src/app/components/tra-cuu-benh/tra-cuu-benh.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_thuoc_thuoc_component__ = __webpack_require__("../../../../../src/app/components/thuoc/thuoc.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_chi_tiet_benh_chi_tiet_benh_component__ = __webpack_require__("../../../../../src/app/components/chi-tiet-benh/chi-tiet-benh.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_chi_tiet_thuoc_chi_tiet_thuoc_component__ = __webpack_require__("../../../../../src/app/components/chi-tiet-thuoc/chi-tiet-thuoc.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_top_nav_navbar_service__ = __webpack_require__("../../../../../src/app/services/top-nav/navbar.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_left_nav_left_navbar_service__ = __webpack_require__("../../../../../src/app/services/left-nav/left-navbar.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_so_yba_so_yba_component__ = __webpack_require__("../../../../../src/app/components/so-yba/so-yba.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__directives_app_auto_focus_directive__ = __webpack_require__("../../../../../src/app/directives/app-auto-focus.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_benh_service__ = __webpack_require__("../../../../../src/app/services/benh.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_menu_service__ = __webpack_require__("../../../../../src/app/services/menu.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_forum_bar_service__ = __webpack_require__("../../../../../src/app/services/forum-bar.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_verify_code_verify_code_component__ = __webpack_require__("../../../../../src/app/components/verify-code/verify-code.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_load_du_lieu_text_load_du_lieu_text_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-text/load-du-lieu-text.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_load_du_lieu_img_load_du_lieu_img_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-img/load-du-lieu-img.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_chan_doan_hinh_anh_chan_doan_hinh_anh_component__ = __webpack_require__("../../../../../src/app/components/chan-doan-hinh-anh/chan-doan-hinh-anh.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_load_du_lieu_youtube_load_du_lieu_youtube_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-youtube/load-du-lieu-youtube.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_load_du_lieu_link_load_du_lieu_link_component__ = __webpack_require__("../../../../../src/app/components/load-du-lieu-link/load-du-lieu-link.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pipes_safe_url_pipe__ = __webpack_require__("../../../../../src/app/pipes/safe-url.pipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_logout_logout_component__ = __webpack_require__("../../../../../src/app/components/logout/logout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_quen_mat_khau_quen_mat_khau_component__ = __webpack_require__("../../../../../src/app/components/quen-mat-khau/quen-mat-khau.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__components_forum_bar_forum_bar_component__ = __webpack_require__("../../../../../src/app/components/forum-bar/forum-bar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_thay_doi_mat_khau_thay_doi_mat_khau_component__ = __webpack_require__("../../../../../src/app/components/thay-doi-mat-khau/thay-doi-mat-khau.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_hoi_chan_truc_tuyen_hoi_chan_truc_tuyen_component__ = __webpack_require__("../../../../../src/app/components/hoi-chan-truc-tuyen/hoi-chan-truc-tuyen.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40_ng_inline_svg__ = __webpack_require__("../../../../ng-inline-svg/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40_ng_inline_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_40_ng_inline_svg__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -156,6 +159,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -197,24 +201,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'soyba', component: __WEBPACK_IMPORTED_MODULE_19__components_so_yba_so_yba_component__["a" /* SoYBaComponent */] },
-    { path: 'tracuubenh', component: __WEBPACK_IMPORTED_MODULE_13__components_tra_cuu_benh_tra_cuu_benh_component__["a" /* TraCuuBenhComponent */] },
-    { path: 'thuoc', component: __WEBPACK_IMPORTED_MODULE_14__components_thuoc_thuoc_component__["a" /* ThuocComponent */] },
-    { path: 'chitiet', component: __WEBPACK_IMPORTED_MODULE_15__components_chi_tiet_benh_chi_tiet_benh_component__["a" /* ChiTietBenhComponent */] },
-    { path: 'chitietthuoc', component: __WEBPACK_IMPORTED_MODULE_16__components_chi_tiet_thuoc_chi_tiet_thuoc_component__["a" /* ChiTietThuocComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_25__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_34__components_logout_logout_component__["a" /* LogoutComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_26__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'forgotPassword', component: __WEBPACK_IMPORTED_MODULE_35__components_quen_mat_khau_quen_mat_khau_component__["a" /* QuenMatKhauComponent */] },
-    { path: 'changePassword/:IdU/:phone', component: __WEBPACK_IMPORTED_MODULE_37__components_thay_doi_mat_khau_thay_doi_mat_khau_component__["a" /* ThayDoiMatKhauComponent */] },
-    { path: 'chandoanhinhanh', component: __WEBPACK_IMPORTED_MODULE_30__components_chan_doan_hinh_anh_chan_doan_hinh_anh_component__["a" /* ChanDoanHinhAnhComponent */] },
-    { path: 'hoichantructuyen', component: __WEBPACK_IMPORTED_MODULE_38__components_hoi_chan_truc_tuyen_hoi_chan_truc_tuyen_component__["a" /* HoiChanTrucTuyenComponent */] },
-    { path: 'verify/:IdU/:phone/:code', component: __WEBPACK_IMPORTED_MODULE_27__components_verify_code_verify_code_component__["a" /* VerifyCodeComponent */] },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'soyba', component: __WEBPACK_IMPORTED_MODULE_20__components_so_yba_so_yba_component__["a" /* SoYBaComponent */] },
+    { path: 'tracuubenh', component: __WEBPACK_IMPORTED_MODULE_14__components_tra_cuu_benh_tra_cuu_benh_component__["a" /* TraCuuBenhComponent */] },
+    { path: 'thuoc', component: __WEBPACK_IMPORTED_MODULE_15__components_thuoc_thuoc_component__["a" /* ThuocComponent */] },
+    { path: 'chitiet', component: __WEBPACK_IMPORTED_MODULE_16__components_chi_tiet_benh_chi_tiet_benh_component__["a" /* ChiTietBenhComponent */] },
+    { path: 'chitietthuoc', component: __WEBPACK_IMPORTED_MODULE_17__components_chi_tiet_thuoc_chi_tiet_thuoc_component__["a" /* ChiTietThuocComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_26__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'logout', component: __WEBPACK_IMPORTED_MODULE_35__components_logout_logout_component__["a" /* LogoutComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_27__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'forgotPassword', component: __WEBPACK_IMPORTED_MODULE_36__components_quen_mat_khau_quen_mat_khau_component__["a" /* QuenMatKhauComponent */] },
+    { path: 'changePassword/:IdU/:phone', component: __WEBPACK_IMPORTED_MODULE_38__components_thay_doi_mat_khau_thay_doi_mat_khau_component__["a" /* ThayDoiMatKhauComponent */] },
+    { path: 'chandoanhinhanh', component: __WEBPACK_IMPORTED_MODULE_31__components_chan_doan_hinh_anh_chan_doan_hinh_anh_component__["a" /* ChanDoanHinhAnhComponent */] },
+    { path: 'hoichantructuyen', component: __WEBPACK_IMPORTED_MODULE_39__components_hoi_chan_truc_tuyen_hoi_chan_truc_tuyen_component__["a" /* HoiChanTrucTuyenComponent */] },
+    { path: 'verify/:IdU/:phone/:code', component: __WEBPACK_IMPORTED_MODULE_28__components_verify_code_verify_code_component__["a" /* VerifyCodeComponent */] },
     //
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_10__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */] }
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_11__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -225,51 +230,53 @@ AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
             //component
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_layout_navigation_navigation_component__["a" /* NavigationComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_layout_left_nav_left_navigation_component__["a" /* LeftNavigationComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_so_yba_so_yba_component__["a" /* SoYBaComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_tra_cuu_benh_tra_cuu_benh_component__["a" /* TraCuuBenhComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_thuoc_thuoc_component__["a" /* ThuocComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_chi_tiet_benh_chi_tiet_benh_component__["a" /* ChiTietBenhComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_chi_tiet_thuoc_chi_tiet_thuoc_component__["a" /* ChiTietThuocComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__directives_app_auto_focus_directive__["a" /* AppAutoFocusDirective */],
-            __WEBPACK_IMPORTED_MODULE_25__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__components_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_27__components_verify_code_verify_code_component__["a" /* VerifyCodeComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__components_load_du_lieu_text_load_du_lieu_text_component__["a" /* LoadDuLieuTextComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_load_du_lieu_img_load_du_lieu_img_component__["a" /* LoadDuLieuImgComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_chan_doan_hinh_anh_chan_doan_hinh_anh_component__["a" /* ChanDoanHinhAnhComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__components_load_du_lieu_youtube_load_du_lieu_youtube_component__["a" /* LoadDuLieuYoutubeComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_load_du_lieu_link_load_du_lieu_link_component__["a" /* LoadDuLieuLinkComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__pipes_safe_url_pipe__["a" /* SafeUrlPipe */],
-            __WEBPACK_IMPORTED_MODULE_34__components_logout_logout_component__["a" /* LogoutComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_quen_mat_khau_quen_mat_khau_component__["a" /* QuenMatKhauComponent */],
-            __WEBPACK_IMPORTED_MODULE_37__components_thay_doi_mat_khau_thay_doi_mat_khau_component__["a" /* ThayDoiMatKhauComponent */],
-            __WEBPACK_IMPORTED_MODULE_38__components_hoi_chan_truc_tuyen_hoi_chan_truc_tuyen_component__["a" /* HoiChanTrucTuyenComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_forum_bar_forum_bar_component__["a" /* ForumBarComponent */]
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_layout_navigation_navigation_component__["a" /* NavigationComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_layout_left_nav_left_navigation_component__["a" /* LeftNavigationComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_so_yba_so_yba_component__["a" /* SoYBaComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_tra_cuu_benh_tra_cuu_benh_component__["a" /* TraCuuBenhComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_thuoc_thuoc_component__["a" /* ThuocComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_chi_tiet_benh_chi_tiet_benh_component__["a" /* ChiTietBenhComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_chi_tiet_thuoc_chi_tiet_thuoc_component__["a" /* ChiTietThuocComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__directives_app_auto_focus_directive__["a" /* AppAutoFocusDirective */],
+            __WEBPACK_IMPORTED_MODULE_26__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_28__components_verify_code_verify_code_component__["a" /* VerifyCodeComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_load_du_lieu_text_load_du_lieu_text_component__["a" /* LoadDuLieuTextComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_load_du_lieu_img_load_du_lieu_img_component__["a" /* LoadDuLieuImgComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_chan_doan_hinh_anh_chan_doan_hinh_anh_component__["a" /* ChanDoanHinhAnhComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_load_du_lieu_youtube_load_du_lieu_youtube_component__["a" /* LoadDuLieuYoutubeComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_load_du_lieu_link_load_du_lieu_link_component__["a" /* LoadDuLieuLinkComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__pipes_safe_url_pipe__["a" /* SafeUrlPipe */],
+            __WEBPACK_IMPORTED_MODULE_35__components_logout_logout_component__["a" /* LogoutComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_quen_mat_khau_quen_mat_khau_component__["a" /* QuenMatKhauComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__components_thay_doi_mat_khau_thay_doi_mat_khau_component__["a" /* ThayDoiMatKhauComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__components_hoi_chan_truc_tuyen_hoi_chan_truc_tuyen_component__["a" /* HoiChanTrucTuyenComponent */],
+            __WEBPACK_IMPORTED_MODULE_37__components_forum_bar_forum_bar_component__["a" /* ForumBarComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_5_angular2_infinite_scroll__["InfiniteScrollModule"],
             __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_8_angular_svg_icon__["a" /* AngularSvgIconModule */],
+            __WEBPACK_IMPORTED_MODULE_40_ng_inline_svg__["InlineSVGModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { enableTracing: false, useHash: true })
         ],
         providers: [
             // services
-            __WEBPACK_IMPORTED_MODULE_17__services_top_nav_navbar_service__["a" /* NavbarService */],
-            __WEBPACK_IMPORTED_MODULE_18__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */],
-            __WEBPACK_IMPORTED_MODULE_21__services_benh_service__["a" /* BenhService */],
-            __WEBPACK_IMPORTED_MODULE_22__services_menu_service__["a" /* MenuService */],
-            __WEBPACK_IMPORTED_MODULE_23__services_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_24__services_forum_bar_service__["a" /* ForumBarService */]
+            __WEBPACK_IMPORTED_MODULE_18__services_top_nav_navbar_service__["a" /* NavbarService */],
+            __WEBPACK_IMPORTED_MODULE_19__services_left_nav_left_navbar_service__["a" /* LeftNavbarService */],
+            __WEBPACK_IMPORTED_MODULE_22__services_benh_service__["a" /* BenhService */],
+            __WEBPACK_IMPORTED_MODULE_23__services_menu_service__["a" /* MenuService */],
+            __WEBPACK_IMPORTED_MODULE_24__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_25__services_forum_bar_service__["a" /* ForumBarService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -640,7 +647,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\r\n.icon-b svg {\r\n    width: 40px !important;\r\n    height: 40px !important;\r\n    background-color: #fff\r\n}\r\n.my-icon{\r\n\r\n}\r\n\r\n/*\r\n.\r\npath {\r\n    fill: blue !important;\r\n}\r\n\r\nsvg {\r\n   fill: blue !important;\r\n}\r\n\r\n.icon-a {\r\n   fill: blue !important;\r\n}\r\npath {\r\n    fill: red;\r\n} */\r\n", ""]);
 
 // exports
 
@@ -653,7 +660,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = " <!-- background: url(../images/bgr-6.jpg) center no-repeat fixed; -->\r\n<div class=\"start-screen\" id=\"start-screen\"[ngStyle]=\"{'background-image': 'url('+ appSetting?.Background +')'}\">\r\n  <header>\r\n    <div class=\"logo-sc\">\r\n      <img style=\"width:80px\" [attr.src]=\"appSetting?.Logo\">\r\n      <!-- src=\"assets/images/logo-startscreen.png\" -->\r\n      <span>{{appSetting?.ThuongHieu}}</span>\r\n    </div>\r\n\r\n    <div class=\"area-controls\">\r\n      <div class=\"user\">\r\n        <span *ngIf=\"this.auth\" class=\"name-user\">{{this.auth.HoVaTen}}</span>\r\n        <span *ngIf=\"this.auth\" class=\"avt fa fa-fw fa-user\" style=\"cursor: pointer;\"></span>\r\n        <a *ngIf=\"!this.auth\" routerLink='/login' class=\"name-user bt-sign-up\">\r\n          <span class=\"fa fa-fw fa-sign-in icon\" aria-hidden=\"true\"></span>\r\n          Đăng nhập\r\n        </a>\r\n        <a *ngIf=\"!this.auth\" routerLink='/register' class=\"sign-up-now bt-sign-up\" [style.background]=\"appSetting?.MauDam\">\r\n          <span class=\"fa fa-fw fa-user-plus icon\" aria-hidden=\"true\"></span>\r\n          Đăng ký ngay\r\n        </a>\r\n      </div>\r\n      <button (click)=\"logOut()\" *ngIf=\"this.auth\" class=\"settings fa fa-fw fa-power-off\" style=\"cursor: pointer;\"></button>\r\n    </div>\r\n    <div class=\"search-top\">\r\n      <div class=\"input-control text full-size\" data-role=\"input\">\r\n        <span class=\"glyphicon glyphicon-search icon-search\" aria-hidden=\"true\"></span>\r\n        <input type=\"text\" placeholder=\"Tìm kiếm dịch vụ...\" [formControl]=\"searchKey\" (keyup)=\"doSearch($event)\">\r\n      </div>\r\n    </div>\r\n  </header>\r\n  <content>\r\n    <!-- start tile group -->\r\n    <div [@pageAnimation]=\"runAnimation\" class=\"tile-group\" *ngFor=\"let menu of homeScreenMenu; let i = index\">\r\n      <h3 class=\"title-group\">{{menu?.Ten}}</h3>\r\n      <span class=\"count-apps\">({{menu?.items.length}} app)</span>\r\n      <div class=\"tile-container\">\r\n        <div class=\"item\" *ngFor=\"let item of menu?.items\">\r\n\r\n          <!--1 ảnh icon ảnh start-->\r\n          <div *ngIf=\"item?.style=='1 ảnh Icon ảnh'\">\r\n            <!--chiều rộng =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n\r\n            <!--chiều rộng =2, chiều cao =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n            <!--chiều rộng =1-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 1 && item?.chieuCao == 1\" class=\"tile bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n          </div>\r\n          <!--1 ảnh icon ảnh end-->\r\n\r\n          <!--1 ảnh icon text start-->\r\n          <div *ngIf=\"item?.style=='1 ảnh Icon text'\">\r\n            <!--chiều rộng = 2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide\" [style.background-color]=\"item?.mauNen\">\r\n              <div class=\"tile-content iconic\">\r\n                <a routerLink={{item.url}}><span class=\"fa fa-fw {{item.IconText}} icon\"></span></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n            <!--chiều rộng = 2, chieuf cao =2-->\r\n            <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-wide doubleH\" [style.background-color]=\"item?.mauNen\"\r\n              [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </a>\r\n            <!--chiều rộng = 1-->\r\n            <div *ngIf=\"item?.chieuRong == 1\" class=\"tile bg-darkBlue fg-white\" [style.background-color]=\"item?.mauNen\">\r\n              <div class=\"tile-content iconic\">\r\n\r\n                <a routerLink={{item.url}}><span class=\"fa fa-fw {{item.IconText}} icon\"></span></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n          </div>\r\n          <!--1 text icon text end-->\r\n\r\n          <!--2 ảnh icon ảnh start-->\r\n          <div *ngIf=\"item?.style=='2 ảnh Icon ảnh'\">\r\n            <!--chiều rộng =2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n\r\n            <!--chiều rộng =2, chiều cao =2-->\r\n            <div *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-large fg-white\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n            <!--chiều rộng =1-->\r\n            <div *ngIf=\"item?.chieuRong == 1 && item?.chieuCao == 1\" class=\"tile fg-white\" data-role=\"tile\" data-effect=\"slideLeft\">\r\n              <div class=\"tile-content\">\r\n                <a *ngFor=\"let images of item?.Images\" routerLink={{item.url}} class=\"live-slide\"><img [src]=\"images\" data-role=\"fitImage\" data-format=\"fill\"></a>\r\n              </div>\r\n              <h4 class=\"tile-label\">\r\n                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n              </h4>\r\n            </div>\r\n          </div>\r\n          <!--2 ảnh icon ảnh end-->\r\n\r\n        </div>\r\n\r\n      </div>\r\n      <a (click)=\"showAll(i)\" class=\"view-all\" style=\"cursor: pointer;\" [style.color]=\"appSetting.MauDam\">\r\n\r\n           <span>Xem tất cả</span>\r\n           <i class=\"fa fa-fw fa-arrow-circle-o-right\"></i>\r\n        </a>\r\n    </div>\r\n"
+module.exports = "<!-- background: url(../images/bgr-6.jpg) center no-repeat fixed; -->\r\n<div class=\"start-screen\" id=\"start-screen\" [ngStyle]=\"{'background-image': 'url('+ appSetting?.Background +')'}\">\r\n    <header>\r\n        <div class=\"logo-sc\">\r\n            <img style=\"width:80px\" [attr.src]=\"appSetting?.Logo\">\r\n            <!-- src=\"assets/images/logo-startscreen.png\" -->\r\n            <span>{{appSetting?.ThuongHieu}}</span>\r\n        </div>\r\n\r\n        <div class=\"area-controls\">\r\n            <div class=\"user\">\r\n                <span *ngIf=\"this.auth\" class=\"name-user\">{{this.auth.HoVaTen}}</span>\r\n                <span *ngIf=\"this.auth\" class=\"avt fa fa-fw fa-user\" style=\"cursor: pointer;\"></span>\r\n                <a *ngIf=\"!this.auth\" routerLink='/login' class=\"name-user bt-sign-up\">\r\n          <span class=\"fa fa-fw fa-sign-in icon\" aria-hidden=\"true\"></span>\r\n          Đăng nhập\r\n        </a>\r\n                <a *ngIf=\"!this.auth\" routerLink='/register' class=\"sign-up-now bt-sign-up\" [style.background]=\"appSetting?.MauDam\">\r\n          <span class=\"fa fa-fw fa-user-plus icon\" aria-hidden=\"true\"></span>\r\n          Đăng ký ngay\r\n        </a>\r\n            </div>\r\n            <button (click)=\"logOut()\" *ngIf=\"this.auth\" class=\"settings fa fa-fw fa-power-off\" style=\"cursor: pointer;\"></button>\r\n        </div>\r\n        <div class=\"search-top\">\r\n            <div class=\"input-control text full-size\" data-role=\"input\">\r\n                <span class=\"glyphicon glyphicon-search icon-search\" aria-hidden=\"true\"></span>\r\n                <input type=\"text\" placeholder=\"Tìm kiếm dịch vụ...\" [formControl]=\"searchKey\" (keyup)=\"doSearch($event)\">\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <content>\r\n        <!-- start tile group -->\r\n        <div [@pageAnimation]=\"runAnimation\" class=\"tile-group\" *ngFor=\"let menu of homeScreenMenu; let i = index\">\r\n            <h3 class=\"title-group\">{{menu?.Ten}}</h3>\r\n            <span class=\"count-apps\">({{menu?.items.length}} app)</span>\r\n            <div class=\"tile-container\">\r\n                <div class=\"item\" *ngFor=\"let item of menu?.items\">\r\n\r\n                    <!--1 ảnh icon ảnh start-->\r\n                    <div *ngIf=\"item?.style=='Image'\">\r\n                        <!--chiều rộng =2-->\r\n                        <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 1\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n                            <h4 class=\"tile-label\">\r\n                                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n                            </h4>\r\n                        </a>\r\n\r\n                        <!--chiều rộng =2, chiều cao =2-->\r\n                        <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 2 && item?.chieuCao == 2\" class=\"tile-wide bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n                            <h4 class=\"tile-label\">\r\n                                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n                            </h4>\r\n                        </a>\r\n                        <!--chiều rộng =1-->\r\n                        <a routerLink={{item.url}} *ngIf=\"item?.chieuRong == 1 && item?.chieuCao == 1\" class=\"tile bgr-img\" [ngStyle]=\"{'background-image': 'url('+ item.Images[0] +')'}\">\r\n                            <h4 class=\"tile-label\">\r\n                                <span class=\"fa fa-fw {{item.IconText}}\" aria-hidden=\"true\"></span> {{item?.Ten}}\r\n                            </h4>\r\n                        </a>\r\n                    </div>\r\n                    <!--1 ảnh icon ảnh end-->\r\n\r\n\r\n\r\n                </div>\r\n\r\n            </div>\r\n            <a (click)=\"showAll(i)\" class=\"view-all\" style=\"cursor: pointer;\" [style.color]=\"appSetting.MauDam\">\r\n\r\n           <span>Xem tất cả</span>\r\n           <i class=\"fa fa-fw fa-arrow-circle-o-right\"></i>\r\n        </a>\r\n        </div>\r\n"
 
 /***/ }),
 
@@ -715,7 +722,7 @@ var HomeComponent = (function () {
             _this.menuService.setLocalStarScreen(data.home);
             _this.localScreen = _this.menuService.getLocalStartScreen();
             _this.appSetting = data.setting;
-            console.log(_this.appSetting);
+            console.log(_this.homeScreenMenu);
         });
     };
     HomeComponent.prototype.logOut = function () {
@@ -2281,7 +2288,7 @@ var BenhService = (function () {
 }());
 BenhService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
 ], BenhService);
 
 var _a;
@@ -2324,7 +2331,7 @@ var ForumBarService = (function () {
 }());
 ForumBarService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
 ], ForumBarService);
 
 var _a;
@@ -2372,7 +2379,7 @@ var LeftNavbarService = (function () {
 }());
 LeftNavbarService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]) === "function" && _a || Object])
 ], LeftNavbarService);
 
 var _a;
@@ -2423,7 +2430,7 @@ var MenuService = (function () {
         this.menu = '';
     }
     MenuService.prototype.getStartScreen = function () {
-        this.menu = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].apiUrl + "menu?tenmien=" + document.location.hostname;
+        this.menu = __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].apiUrl + "Center/Home_Detail?tenmien=" + document.location.hostname;
         // ...using get request
         return this.http.get(this.menu)
             .map(function (res) { return res.json(); })
@@ -2449,7 +2456,7 @@ var MenuService = (function () {
 MenuService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["c" /* DOCUMENT */])),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object, Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object, Object])
 ], MenuService);
 
 var _a;
@@ -2526,40 +2533,40 @@ var UserService = (function () {
     // 	console.log(headers);
     // }
     UserService.prototype.getUser = function (token_type, token) {
-        var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]();
+        var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         header.append('Authorization', "Bearer " + token);
         return this.http.get("http://truongkhoa.com/api/Account/UserInfo", this.jwt())
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.jwt = function () {
         // create authorization header with jwt token
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Headers */]({ 'Authorization': "bearer " + this.getLocalToken() });
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]({ 'Authorization': "bearer " + this.getLocalToken() });
         headers.append('Content-Type', 'application/json');
         headers.append('Accept', 'application/json');
         console.log(headers);
-        return new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        return new __WEBPACK_IMPORTED_MODULE_1__angular_http__["RequestOptions"]({ headers: headers });
     };
     UserService.prototype.forgotPassword = function (phone) {
-        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
         body.set('Phone', phone);
         return this.http.post("http://truongkhoa.com/api/Account/ForgotPassword", body).map(function (response) { return response.json(); });
     };
     UserService.prototype.changePass = function (newPass, code, phone, idU) {
-        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
         body.set('PhoneNumber', phone);
         body.set('Code', code);
         body.set('Password', newPass);
         return this.http.post('http://truongkhoa.com/api/Account/ForgotPassword?IdU=' + idU, body).map(function (response) { return response.json(); });
     };
     UserService.prototype.login = function (username, password) {
-        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
         body.set('username', username);
         body.set('password', password);
         body.set('grant_type', "password");
         return this.http.post("http://truongkhoa.com/Token", body).map(function (response) { return response.json(); });
     };
     UserService.prototype.register = function (name, email, phone, password) {
-        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
         body.set('HoVaTen', name);
         body.set('Email', email);
         body.set('Phone', phone);
@@ -2567,7 +2574,7 @@ var UserService = (function () {
         return this.http.post('http://truongkhoa.com/api/Account/Register', body).map(function (response) { return response.json(); });
     };
     UserService.prototype.verifyCode = function (code, phone, idUser) {
-        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* URLSearchParams */]();
+        var body = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["URLSearchParams"]();
         body.set('Code', code);
         body.set('PhoneNumber', phone);
         return this.http.post('http://truongkhoa.com/api/Account/XacNhanPhone?IdU=' + idUser, body).map(function (response) { return response.json(); });
@@ -2598,7 +2605,7 @@ var UserService = (function () {
 }());
 UserService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
 ], UserService);
 
 var _a;

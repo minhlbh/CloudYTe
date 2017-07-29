@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
             this.menuService.setLocalStarScreen(data.home);
             this.localScreen = this.menuService.getLocalStartScreen();
             this.appSetting = data.setting;
-            console.log(this.appSetting);
+            console.log(this.homeScreenMenu);
         });
 
     }

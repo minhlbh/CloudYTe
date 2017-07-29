@@ -17,7 +17,7 @@ export class MenuService {
     ) { }
     private menu = '';
     getStartScreen(): Observable<any> {
-        this.menu = `${environment.apiUrl}menu?tenmien=${document.location.hostname}`;
+        this.menu = `${environment.apiUrl}Center/Home_Detail?tenmien=${document.location.hostname}`;
         // ...using get request
         return this.http.get(this.menu)
             // ...and calling .json() on the response to return data

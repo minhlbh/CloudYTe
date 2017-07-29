@@ -1,136 +1,74 @@
-﻿ <!-- background: url(../images/bgr-6.jpg) center no-repeat fixed; -->
+﻿<!-- background: url(../images/bgr-6.jpg) center no-repeat fixed; -->
 <div class="start-screen" id="start-screen" [ngStyle]="{'background-image': 'url('+ appSetting?.Background +')'}">
-  <header>
-    <div class="logo-sc">
-      <img style="width:80px" [attr.src]="appSetting?.Logo">
-      <!-- src="assets/images/logo-startscreen.png" -->
-      <span>{{appSetting?.ThuongHieu}}</span>
-    </div>
+    <header>
+        <div class="logo-sc">
+            <img style="width:80px" [attr.src]="appSetting?.Logo">
+            <!-- src="assets/images/logo-startscreen.png" -->
+            <span>{{appSetting?.ThuongHieu}}</span>
+        </div>
 
-    <div class="area-controls">
-      <div class="user">
-        <span *ngIf="this.auth" class="name-user">{{this.auth.HoVaTen}}</span>
-        <span *ngIf="this.auth" class="avt fa fa-fw fa-user" style="cursor: pointer;"></span>
-        <a *ngIf="!this.auth" routerLink='/login' class="name-user bt-sign-up">
+        <div class="area-controls">
+            <div class="user">
+                <span *ngIf="this.auth" class="name-user">{{this.auth.HoVaTen}}</span>
+                <span *ngIf="this.auth" class="avt fa fa-fw fa-user" style="cursor: pointer;"></span>
+                <a *ngIf="!this.auth" routerLink='/login' class="name-user bt-sign-up">
           <span class="fa fa-fw fa-sign-in icon" aria-hidden="true"></span>
           Đăng nhập
         </a>
-        <a *ngIf="!this.auth" routerLink='/register' class="sign-up-now bt-sign-up" [style.background]="appSetting?.MauDam">
+                <a *ngIf="!this.auth" routerLink='/register' class="sign-up-now bt-sign-up" [style.background]="appSetting?.MauDam">
           <span class="fa fa-fw fa-user-plus icon" aria-hidden="true"></span>
           Đăng ký ngay
         </a>
-      </div>
-      <button (click)="logOut()" *ngIf="this.auth" class="settings fa fa-fw fa-power-off" style="cursor: pointer;"></button>
-    </div>
-    <div class="search-top">
-      <div class="input-control text full-size" data-role="input">
-        <span class="glyphicon glyphicon-search icon-search" aria-hidden="true"></span>
-        <input type="text" placeholder="Tìm kiếm dịch vụ..." [formControl]="searchKey" (keyup)="doSearch($event)">
-      </div>
-    </div>
-  </header>
-  <content>
-    <!-- start tile group -->
-    <div [@pageAnimation]="runAnimation" class="tile-group" *ngFor="let menu of homeScreenMenu; let i = index">
-      <h3 class="title-group">{{menu?.Ten}}</h3>
-      <span class="count-apps">({{menu?.items.length}} app)</span>
-      <div class="tile-container">
-        <div class="item" *ngFor="let item of menu?.items">
-
-          <!--1 ảnh icon ảnh start-->
-          <div *ngIf="item?.style=='1 ảnh Icon ảnh'">
-            <!--chiều rộng =2-->
-            <a routerLink={{item.url}} *ngIf="item?.chieuRong == 2 && item?.chieuCao == 1" class="tile-wide bgr-img" [ngStyle]="{'background-image': 'url('+ item.Images[0] +')'}">
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </a>
-
-            <!--chiều rộng =2, chiều cao =2-->
-            <a routerLink={{item.url}} *ngIf="item?.chieuRong == 2 && item?.chieuCao == 2" class="tile-wide bgr-img" [ngStyle]="{'background-image': 'url('+ item.Images[0] +')'}">
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </a>
-            <!--chiều rộng =1-->
-            <a routerLink={{item.url}} *ngIf="item?.chieuRong == 1 && item?.chieuCao == 1" class="tile bgr-img" [ngStyle]="{'background-image': 'url('+ item.Images[0] +')'}">
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </a>
-          </div>
-          <!--1 ảnh icon ảnh end-->
-
-          <!--1 ảnh icon text start-->
-          <div *ngIf="item?.style=='1 ảnh Icon text'">
-            <!--chiều rộng = 2-->
-            <div *ngIf="item?.chieuRong == 2 && item?.chieuCao == 1" class="tile-wide" [style.background-color]="item?.mauNen">
-              <div class="tile-content iconic">
-                <a routerLink={{item.url}}><span class="fa fa-fw {{item.IconText}} icon"></span></a>
-              </div>
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
             </div>
-            <!--chiều rộng = 2, chieuf cao =2-->
-            <a routerLink={{item.url}} *ngIf="item?.chieuRong == 2 && item?.chieuCao == 2" class="tile-wide doubleH" [style.background-color]="item?.mauNen"
-              [ngStyle]="{'background-image': 'url('+ item.Images[0] +')'}">
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </a>
-            <!--chiều rộng = 1-->
-            <div *ngIf="item?.chieuRong == 1" class="tile bg-darkBlue fg-white" [style.background-color]="item?.mauNen">
-              <div class="tile-content iconic">
-
-                <a routerLink={{item.url}}><span class="fa fa-fw {{item.IconText}} icon"></span></a>
-              </div>
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </div>
-          </div>
-          <!--1 text icon text end-->
-
-          <!--2 ảnh icon ảnh start-->
-          <div *ngIf="item?.style=='2 ảnh Icon ảnh'">
-            <!--chiều rộng =2-->
-            <div *ngIf="item?.chieuRong == 2 && item?.chieuCao == 1" class="tile-wide" data-role="tile" data-effect="slideLeft">
-              <div class="tile-content">
-                <a *ngFor="let images of item?.Images" routerLink={{item.url}} class="live-slide"><img [src]="images" data-role="fitImage" data-format="fill"></a>
-              </div>
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </div>
-
-            <!--chiều rộng =2, chiều cao =2-->
-            <div *ngIf="item?.chieuRong == 2 && item?.chieuCao == 2" class="tile-large fg-white" data-role="tile" data-effect="slideLeft">
-              <div class="tile-content">
-                <a *ngFor="let images of item?.Images" routerLink={{item.url}} class="live-slide"><img [src]="images" data-role="fitImage" data-format="fill"></a>
-              </div>
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </div>
-            <!--chiều rộng =1-->
-            <div *ngIf="item?.chieuRong == 1 && item?.chieuCao == 1" class="tile fg-white" data-role="tile" data-effect="slideLeft">
-              <div class="tile-content">
-                <a *ngFor="let images of item?.Images" routerLink={{item.url}} class="live-slide"><img [src]="images" data-role="fitImage" data-format="fill"></a>
-              </div>
-              <h4 class="tile-label">
-                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
-              </h4>
-            </div>
-          </div>
-          <!--2 ảnh icon ảnh end-->
-
+            <button (click)="logOut()" *ngIf="this.auth" class="settings fa fa-fw fa-power-off" style="cursor: pointer;"></button>
         </div>
+        <div class="search-top">
+            <div class="input-control text full-size" data-role="input">
+                <span class="glyphicon glyphicon-search icon-search" aria-hidden="true"></span>
+                <input type="text" placeholder="Tìm kiếm dịch vụ..." [formControl]="searchKey" (keyup)="doSearch($event)">
+            </div>
+        </div>
+    </header>
+    <content>
+        <!-- start tile group -->
+        <div [@pageAnimation]="runAnimation" class="tile-group" *ngFor="let menu of homeScreenMenu; let i = index">
+            <h3 class="title-group">{{menu?.Ten}}</h3>
+            <span class="count-apps">({{menu?.items.length}} app)</span>
+            <div class="tile-container">
+                <div class="item" *ngFor="let item of menu?.items">
 
-      </div>
-      <a (click)="showAll(i)" class="view-all" style="cursor: pointer;" [style.color]="appSetting.MauDam">
+                    <!--1 ảnh icon ảnh start-->
+                    <div *ngIf="item?.style=='Image'">
+                        <!--chiều rộng =2-->
+                        <a routerLink={{item.url}} *ngIf="item?.chieuRong == 2 && item?.chieuCao == 1" class="tile-wide bgr-img" [ngStyle]="{'background-image': 'url('+ item.Images[0] +')'}">
+                            <h4 class="tile-label">
+                                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
+                            </h4>
+                        </a>
+
+                        <!--chiều rộng =2, chiều cao =2-->
+                        <a routerLink={{item.url}} *ngIf="item?.chieuRong == 2 && item?.chieuCao == 2" class="tile-wide bgr-img" [ngStyle]="{'background-image': 'url('+ item.Images[0] +')'}">
+                            <h4 class="tile-label">
+                                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
+                            </h4>
+                        </a>
+                        <!--chiều rộng =1-->
+                        <a routerLink={{item.url}} *ngIf="item?.chieuRong == 1 && item?.chieuCao == 1" class="tile bgr-img" [ngStyle]="{'background-image': 'url('+ item.Images[0] +')'}">
+                            <h4 class="tile-label">
+                                <span class="fa fa-fw {{item.IconText}}" aria-hidden="true"></span> {{item?.Ten}}
+                            </h4>
+                        </a>
+                    </div>
+                    <!--1 ảnh icon ảnh end-->
+
+
+
+                </div>
+
+            </div>
+            <a (click)="showAll(i)" class="view-all" style="cursor: pointer;" [style.color]="appSetting.MauDam">
 
            <span>Xem tất cả</span>
            <i class="fa fa-fw fa-arrow-circle-o-right"></i>
         </a>
-    </div>
+        </div>
